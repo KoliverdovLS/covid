@@ -1,3 +1,3 @@
-function default () {
+function someFunction() {
   console.log('Hi');
 }
