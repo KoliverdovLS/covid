@@ -6,10 +6,10 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-/******/ (() => { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
-eval("const container = document.createElement('div');\ncontainer.classList.add('container');\nbody.appendChild(container);\n\n//# sourceURL=webpack:///./index.js?");
+eval("var container = document.createElement('div');\ncontainer.classList.add('container');\nbody.appendChild(container);\n\n//# sourceURL=webpack:///./index.js?");
 /******/ })()
 ;
