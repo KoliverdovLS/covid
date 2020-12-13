@@ -14,11 +14,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.png', '.']
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
   plugins: [
     new HTMLWebpackPlugin({
       template: './index.html'
