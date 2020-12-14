@@ -323,7 +323,7 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"../node_modules
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dashBoard\": function() { return /* binding */ dashBoard; }\n/* harmony export */ });\n/* harmony import */ var _service_getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service/getData */ \"./service/getData.js\");\n\n\nfunction dashBoard() {\n  // return (getByCountryTotalAllStatus('belgium', 'confirmed', new Date('2020-03-01T00:00:00Z'), new Date('2020-11-01T00:00:00Z')));\n  return (0,_service_getData__WEBPACK_IMPORTED_MODULE_0__.getByCountryTotalAllStatus)('belgium');\n} // belgium\n// confirmed\n\n\n\n\n//# sourceURL=webpack:///./dashboard.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dashBoard\": function() { return /* binding */ dashBoard; }\n/* harmony export */ });\n/* harmony import */ var _service_getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service/getData */ \"./service/getData.js\");\n\n\nfunction dashBoard() {\n  // return (getByCountryTotalAllStatus('belgium', 'confirmed', new Date('2020-03-01T00:00:00Z'), new Date('2020-11-01T00:00:00Z')));\n  // return getByCountryTotalAllStatus('belgium');\n  return 'fff';\n} // belgium\n// confirmed\n\n\n\n\n//# sourceURL=webpack:///./dashboard.js?");
 
 /***/ }),
 
