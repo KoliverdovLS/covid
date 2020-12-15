@@ -7,7 +7,7 @@ import './styles/index.css';
 // function render(context) {
 // document.body.innerHTML = '';
 const container = document.createElement('div');
-container.className = ('container-fluid');
+container.className = ('container-fluid vh-100 mvh-100');
 
 const rowtitle = document.createElement('div');
 rowtitle.className = ('row justify-content-end bg-light');

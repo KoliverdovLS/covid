@@ -4,7 +4,7 @@ import { changeTableOnCountry } from './changeTable';
 
 export default function getTableList(context) {
   const container = document.createElement('div');
-  container.className = ('container-fluid p-0 m-0 height');
+  container.className = ('container-fluid p-0 m-0');
   summaryByCountry().then((info) => {
     const { Countries } = info;
     Countries.map((i) => {
