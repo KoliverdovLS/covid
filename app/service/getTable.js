@@ -27,7 +27,7 @@ export default function getTableList(context) {
 
       row.addEventListener('mouseenter', (e) => {
         e.target.classList.add('bg-white');
-        console.log(e.target.children[0].textContent);
+        //console.log(e.target.children[0].textContent);
       });
       row.addEventListener('mouseleave', (e) => {
         e.target.classList.remove('bg-white');

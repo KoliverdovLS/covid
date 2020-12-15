@@ -1,28 +1,76 @@
-
+import { getCountries, summaryByCountry } from '../service/getData';
 
 export default function table(context) {
   const container = document.createElement('div');
-  const row = document.createElement('div');
-  const columnDest = document.createElement('div');
-  const columnCases = document.createElement('div');
-  const columnDeath = document.createElement('div');
-  const columnRecov = document.createElement('div');
-  container.className = ('container-fluid px-4');
-  row.className = ('row justify-content-center align-items-center gx-5');
-  columnDest.className = ('col h3 bg-success border');
-  columnCases.className = ('col h3 bg-success border');
-  columnDeath.className = ('col h3 bg-success border');
-  columnRecov.className = ('col h3 bg-success border');
+  container.className = ('container-fluid bg-dark p-0');
 
-  columnDest.textContent = 'World';
-  columnCases.textContent = 'How many cases';
-  columnDeath.textContent = 'Death';
-  columnRecov.textContent = 'Recovered';
+  summaryByCountry().then((data) => {
+    console.log(data);
+    const { Date, Global: { TotalConfirmed, TotalDeaths, TotalRecovered } } = data;
+    console.log(Date);
+    console.log(TotalConfirmed);
+    console.log(TotalDeaths);
+    console.log(TotalRecovered);
+    const row = document.createElement('div');
+    const columnDest = document.createElement('div');
+    const columnCases = document.createElement('div');
+    const columnDeath = document.createElement('div');
+    const columnRecov = document.createElement('div');
+    row.className = ('row justify-content-between align-items-center p-0 bg-info');
+    columnDest.className = ('col h3 align-items-center bg-success border p-0 m-0');
+    columnCases.className = ('col h3 bg-success border p-0 m-0');
+    columnDeath.className = ('col h3 bg-success border p-0 m-0');
+    columnRecov.className = ('col h3 bg-success border p-0 m-0');
 
-  container.appendChild(row);
-  row.appendChild(columnDest);
-  row.appendChild(columnCases);
-  row.appendChild(columnDeath);
-  row.appendChild(columnRecov);
+    const columnDestTop = document.createElement('div');
+    const columnDestLow = document.createElement('div');
+    columnDestTop.className = ('col-12 h3 bg-transparent p-3 m-0');
+    columnDestLow.className = ('col-12 h3 bg-transparent p-3 m-0');
+
+    columnDestTop.textContent = 'In the world';
+    columnDestLow.textContent = Date.toLocaleString();
+
+    const columnCasesTop = document.createElement('div');
+    const columnCasesLow = document.createElement('div');
+    columnCasesTop.className = ('col-12 h3 bg-transparent p-3 m-0');
+    columnCasesLow.className = ('col-12 h3 bg-transparent p-3 m-0');
+
+    const columnDeathTop = document.createElement('div');
+    const columnDeathLow = document.createElement('div');
+    columnDeathTop.className = ('col-12 h3 bg-transparent p-3 m-0');
+    columnDeathLow.className = ('col-12 h3 bg-transparent p-3 m-0');
+
+    const columnRecovTop = document.createElement('div');
+    const columnRecovLow = document.createElement('div');
+    columnRecovTop.className = ('col-12 h3 bg-transparent p-3 m-0');
+    columnRecovLow.className = ('col-12 h3 bg-transparent p-3 m-0');
+
+    columnDest.appendChild(columnDestTop);
+    columnDest.appendChild(columnDestLow);
+    columnCases.appendChild(columnCasesTop);
+    columnCases.appendChild(columnCasesLow);
+
+    columnDeath.appendChild(columnDeathTop);
+    columnDeath.appendChild(columnDeathLow);
+    columnRecov.appendChild(columnRecovTop);
+    columnRecov.appendChild(columnRecovLow);
+
+    columnCasesTop.textContent = 'Overall';
+    columnCasesLow.textContent = TotalConfirmed;
+
+    columnDeathTop.textContent = 'Deaths';
+    columnDeathLow.textContent = TotalDeaths;
+
+    columnRecovTop.textContent = 'Recoveries';
+    columnRecovLow.textContent = TotalRecovered;
+
+    container.appendChild(row);
+    row.appendChild(columnDest);
+    row.appendChild(columnCases);
+    row.appendChild(columnDeath);
+    row.appendChild(columnRecov);
+
+  })
+
   return container;
 }
