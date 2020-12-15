@@ -1,6 +1,7 @@
 import { dashBoard } from './dashboard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "@babel/polyfill";
+import './styles/index.css';
 
 const container = document.createElement('div');
 container.className = ('container-fluid');

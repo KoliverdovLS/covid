@@ -1,8 +1,10 @@
+import '../styles/index.css';
+
 export default function getTableList(context) {
   const container = document.createElement('div');
-  container.className = ('container-fluid');
+  container.className = ('container-fluid height overflow-auto');
 
-  for (let i = 1; i <= 10; i += 1) {
+  for (let i = 1; i <= 100; i += 1) {
     const row = document.createElement('div');
     row.className = ('row justify-content-around align-items-center');
     const columnName = document.createElement('div');
