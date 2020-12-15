@@ -316,6 +316,50 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"../node_modules
 
 /***/ }),
 
+/***/ "./components/graph.js":
+/*!*****************************!*\
+  !*** ./components/graph.js ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ graph; }\n/* harmony export */ });\nfunction graph(context) {\n  var container = document.createElement('div');\n  var row = document.createElement('div');\n  var column = document.createElement('div');\n  container.className = 'container-fluid px-4';\n  row.className = 'row justify-content-center align-items-center gx-5';\n  column.className = 'col h3 bg-success border';\n  column.textContent = context.graph;\n  container.appendChild(row);\n  row.appendChild(column);\n  return container;\n}\n\n//# sourceURL=webpack:///./components/graph.js?");
+
+/***/ }),
+
+/***/ "./components/list.js":
+/*!****************************!*\
+  !*** ./components/list.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ list; }\n/* harmony export */ });\nfunction list(context) {\n  var container = document.createElement('div');\n  var row = document.createElement('div');\n  var column = document.createElement('div');\n  container.className = 'container-fluid px-4';\n  row.className = 'row justify-content-center align-items-center gx-5';\n  column.className = 'col h3 bg-success border';\n  column.textContent = context.list;\n  container.appendChild(row);\n  row.appendChild(column);\n  return container;\n}\n\n//# sourceURL=webpack:///./components/list.js?");
+
+/***/ }),
+
+/***/ "./components/map.js":
+/*!***************************!*\
+  !*** ./components/map.js ***!
+  \***************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ map; }\n/* harmony export */ });\nfunction map(context) {\n  var container = document.createElement('div');\n  var row = document.createElement('div');\n  var column = document.createElement('div');\n  container.className = 'container-fluid px-4';\n  row.className = 'row justify-content-center align-items-center gx-5';\n  column.className = 'col h3 bg-success border';\n  column.textContent = context.map;\n  container.appendChild(row);\n  row.appendChild(column);\n  return container;\n}\n\n//# sourceURL=webpack:///./components/map.js?");
+
+/***/ }),
+
+/***/ "./components/table.js":
+/*!*****************************!*\
+  !*** ./components/table.js ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ table; }\n/* harmony export */ });\nfunction table(context) {\n  var container = document.createElement('div');\n  var row = document.createElement('div');\n  var column = document.createElement('div');\n  container.className = 'container-fluid px-4';\n  row.className = 'row justify-content-center align-items-center gx-5';\n  column.className = 'col h3 bg-success border';\n  column.textContent = context.table;\n  container.appendChild(row);\n  row.appendChild(column);\n  return container;\n}\n\n//# sourceURL=webpack:///./components/table.js?");
+
+/***/ }),
+
 /***/ "./dashboard.js":
 /*!**********************!*\
   !*** ./dashboard.js ***!
@@ -323,7 +367,7 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"../node_modules
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dashBoard\": function() { return /* binding */ dashBoard; }\n/* harmony export */ });\n/* harmony import */ var _service_getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service/getData */ \"./service/getData.js\");\n\n\nfunction dashBoard() {\n  // return (getByCountryTotalAllStatus('belgium', 'confirmed', new Date('2020-03-01T00:00:00Z'), new Date('2020-11-01T00:00:00Z')));\n  // return getByCountryTotalAllStatus('belgium');\n  return 'fff';\n} // belgium\n// confirmed\n\n\n\n\n//# sourceURL=webpack:///./dashboard.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dashBoard\": function() { return /* binding */ dashBoard; }\n/* harmony export */ });\n/* harmony import */ var _service_getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service/getData */ \"./service/getData.js\");\n/* harmony import */ var _components_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/table */ \"./components/table.js\");\n/* harmony import */ var _components_list__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/list */ \"./components/list.js\");\n/* harmony import */ var _components_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/map */ \"./components/map.js\");\n/* harmony import */ var _components_graph__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/graph */ \"./components/graph.js\");\n\n\n\n\n\nvar dashBoard = {\n  table: 'table',\n  list: 'list',\n  map: 'map',\n  graph: 'graph',\n  getTable: function getTable() {\n    return (0,_components_table__WEBPACK_IMPORTED_MODULE_1__.default)(this);\n  },\n  getList: function getList() {\n    return (0,_components_list__WEBPACK_IMPORTED_MODULE_2__.default)(this);\n  },\n  getMap: function getMap() {\n    return (0,_components_map__WEBPACK_IMPORTED_MODULE_3__.default)(this);\n  },\n  getGraph: function getGraph() {\n    return (0,_components_graph__WEBPACK_IMPORTED_MODULE_4__.default)(this);\n  }\n};\n // function dashBoard() {\n// return (getByCountryTotalAllStatus('belgium', 'confirmed', new Date('2020-03-01T00:00:00Z'), new Date('2020-11-01T00:00:00Z')));\n// return getByCountryTotalAllStatus('belgium');\n//   return 'fff';\n// }\n// belgium\n// confirmed\n// export { dashBoard };\n\n//# sourceURL=webpack:///./dashboard.js?");
 
 /***/ }),
 
@@ -334,7 +378,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard */ \"./dashboard.js\");\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/polyfill */ \"../node_modules/@babel/polyfill/lib/index.js\");\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar container = document.createElement('div');\ncontainer.classList.add('container');\ncontainer.textContent = 'kkkk';\nconsole.log((0,_dashboard__WEBPACK_IMPORTED_MODULE_0__.dashBoard)());\ndocument.body.appendChild(container);\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dashboard */ \"./dashboard.js\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"../node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/polyfill */ \"../node_modules/@babel/polyfill/lib/index.js\");\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nvar container = document.createElement('div');\ncontainer.className = 'container-fluid';\nvar rowtop = document.createElement('div');\nrowtop.className = 'row justify-content-end bg-light';\nvar rowlow = document.createElement('div');\nrowlow.className = 'row justify-content-end bg-light';\nvar columnForGraph = document.createElement('div');\ncolumnForGraph.className = 'p-4 col h3 bg-light border';\nvar columnForMap = document.createElement('div');\ncolumnForMap.className = 'p-4 col h3 bg-light border';\nvar columnForList = document.createElement('div');\ncolumnForList.className = 'p-4 col h3 bg-light border';\nvar columnForTable = document.createElement('div');\ncolumnForTable.className = 'p-4 col-12 h3 bg-light border';\ncolumnForGraph.appendChild(_dashboard__WEBPACK_IMPORTED_MODULE_0__.dashBoard.getGraph());\ncolumnForList.appendChild(_dashboard__WEBPACK_IMPORTED_MODULE_0__.dashBoard.getList());\ncolumnForMap.appendChild(_dashboard__WEBPACK_IMPORTED_MODULE_0__.dashBoard.getMap());\ncolumnForTable.appendChild(_dashboard__WEBPACK_IMPORTED_MODULE_0__.dashBoard.getTable());\nrowtop.appendChild(columnForTable);\nrowlow.appendChild(columnForList);\nrowlow.appendChild(columnForMap);\nrowlow.appendChild(columnForGraph);\ncontainer.appendChild(rowtop);\ncontainer.appendChild(rowlow);\ndocument.body.appendChild(container);\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -3474,6 +3518,17 @@ eval("// ie9- setTimeout & setInterval additional parameters fix\nvar global = _
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 eval("__webpack_require__(/*! ../modules/web.timers */ \"../node_modules/core-js/modules/web.timers.js\");\n__webpack_require__(/*! ../modules/web.immediate */ \"../node_modules/core-js/modules/web.immediate.js\");\n__webpack_require__(/*! ../modules/web.dom.iterable */ \"../node_modules/core-js/modules/web.dom.iterable.js\");\nmodule.exports = __webpack_require__(/*! ../modules/_core */ \"../node_modules/core-js/modules/_core.js\");\n\n\n//# sourceURL=webpack:///../node_modules/core-js/web/index.js?");
+
+/***/ }),
+
+/***/ "../node_modules/bootstrap/dist/css/bootstrap.min.css":
+/*!************************************************************!*\
+  !*** ../node_modules/bootstrap/dist/css/bootstrap.min.css ***!
+  \************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///../node_modules/bootstrap/dist/css/bootstrap.min.css?");
 
 /***/ }),
 
