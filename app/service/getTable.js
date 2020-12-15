@@ -1,5 +1,6 @@
 import '../styles/index.css';
 import { getCountries, summaryByCountry } from './getData';
+import { changeTableOnCountry } from './changeTable';
 
 export default function getTableList(context) {
   const container = document.createElement('div');
@@ -27,11 +28,20 @@ export default function getTableList(context) {
 
       row.addEventListener('mouseenter', (e) => {
         e.target.classList.add('bg-white');
-        //console.log(e.target.children[0].textContent);
       });
       row.addEventListener('mouseleave', (e) => {
         e.target.classList.remove('bg-white');
       });
+      row.addEventListener('click', (e) => {
+        // e.stopImmediatePropagation();
+        // e.preventDefault();
+        // e.stopPropagation();
+        // console.log(e.target.parentNode.children[0].textContent);
+        // console.log(e.target);
+        context.destination = e.target.parentNode.children[0].textContent;
+        // context.init();
+        changeTableOnCountry(context, e);
+      })
     });
   });
 

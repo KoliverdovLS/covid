@@ -1,12 +1,13 @@
 import { getCountries, summaryByCountry } from '../service/getData';
 
 export default function table(context) {
+  const { destination } = context;
   const container = document.createElement('div');
   container.className = ('container-fluid bg-dark p-0');
-
+  console.log(context.destination);
   summaryByCountry().then((data) => {
     console.log(data);
-    const { Date, Global: { TotalConfirmed, TotalDeaths, TotalRecovered } } = data;
+    const { Date, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered } } = data;
     console.log(Date);
     console.log(TotalConfirmed);
     console.log(TotalDeaths);
@@ -24,8 +25,8 @@ export default function table(context) {
 
     const columnDestTop = document.createElement('div');
     const columnDestLow = document.createElement('div');
-    columnDestTop.className = ('col-12 h3 bg-transparent p-3 m-0');
-    columnDestLow.className = ('col-12 h3 bg-transparent p-3 m-0');
+    columnDestTop.className = ('table-where col-12 h3 bg-transparent p-3 m-0');
+    columnDestLow.className = ('table-date col-12 h3 bg-transparent p-3 m-0');
 
     columnDestTop.textContent = 'In the world';
     columnDestLow.textContent = Date.toLocaleString();
@@ -33,17 +34,17 @@ export default function table(context) {
     const columnCasesTop = document.createElement('div');
     const columnCasesLow = document.createElement('div');
     columnCasesTop.className = ('col-12 h3 bg-transparent p-3 m-0');
-    columnCasesLow.className = ('col-12 h3 bg-transparent p-3 m-0');
+    columnCasesLow.className = ('table-case col-12 h3 bg-transparent p-3 m-0');
 
     const columnDeathTop = document.createElement('div');
     const columnDeathLow = document.createElement('div');
     columnDeathTop.className = ('col-12 h3 bg-transparent p-3 m-0');
-    columnDeathLow.className = ('col-12 h3 bg-transparent p-3 m-0');
+    columnDeathLow.className = ('table-death col-12 h3 bg-transparent p-3 m-0');
 
     const columnRecovTop = document.createElement('div');
     const columnRecovLow = document.createElement('div');
     columnRecovTop.className = ('col-12 h3 bg-transparent p-3 m-0');
-    columnRecovLow.className = ('col-12 h3 bg-transparent p-3 m-0');
+    columnRecovLow.className = ('table-recov col-12 h3 bg-transparent p-3 m-0');
 
     columnDest.appendChild(columnDestTop);
     columnDest.appendChild(columnDestLow);
@@ -69,7 +70,6 @@ export default function table(context) {
     row.appendChild(columnCases);
     row.appendChild(columnDeath);
     row.appendChild(columnRecov);
-
   })
 
   return container;
