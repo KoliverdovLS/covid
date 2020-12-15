@@ -12,13 +12,13 @@ const rowlow = document.createElement('div');
 rowlow.className = ('row justify-content-end bg-light');
 
 const columnForGraph = document.createElement('div');
-columnForGraph.className = ('p-4 col h3 bg-light border');
+columnForGraph.className = ('p-4 col-4 h3 bg-light border');
 
 const columnForMap = document.createElement('div');
-columnForMap.className = ('p-4 col h3 bg-light border');
+columnForMap.className = ('p-4 col-5 h3 bg-light border');
 
 const columnForList = document.createElement('div');
-columnForList.className = ('p-4 col h3 bg-light border');
+columnForList.className = ('p-4 col-3 h3 bg-light border');
 
 const columnForTable = document.createElement('div');
 columnForTable.className = ('p-4 col-12 h3 bg-light border');
