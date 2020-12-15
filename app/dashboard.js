@@ -12,6 +12,7 @@ import {
   getDayOneAllStatus,
   getDayOneAnyStatusLive,
   getOneTotal,
+  getFlag,
 } from './service/getData';
 import table from './components/table';
 import list from './components/list';
