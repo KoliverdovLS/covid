@@ -277,6 +277,24 @@ async function getByCountryTotalAllStatus(slug) {
   await getInfoByCountryTotalAllStatus();
   return list;
 }
+// according to https://www.countryflags.io/ do not use!!
+async function getFlag(code = 'be', type = 'flat', size = '32') {
+  let list = '';
+  const url = `https://www.countryflags.io/${code}/${type}/${size}.png`;
+  const getFlagPng = async () => {
+    try {
+      const response = await axios({
+        method: 'get',
+        url: `${url}`,
+      });
+      list = (response);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  await getFlagPng();
+  return list;
+}
 
 
 export {
