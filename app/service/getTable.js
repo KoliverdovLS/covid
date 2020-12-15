@@ -19,8 +19,8 @@ export default function getTableList(context) {
       const columnFlag = document.createElement('div');
       const columnCases = document.createElement('div');
       columnName.className = ('col-5 m-0 fs-6 bg-light');
-      columnFlag.className = ('col-1 m-0 fs-6 bg-light');
-      columnCases.className = ('col-3 m-0 fs-6 bg-light');
+      columnFlag.className = ('col-1 m-0 p-0 fs-6 bg-light');
+      columnCases.className = ('col-3 m-0 p-0 fs-6 bg-light');
 
       columnName.textContent = Country;
       columnFlag.innerHTML = `<img src="https://www.countryflags.io/${CountryCode}/flat/32.png">`;
