@@ -9,6 +9,7 @@ export default function list(context) {
   column.className = ('col h3 bg-success border');
   column.textContent = context.list;
   container.appendChild(row);
-  row.appendChild(column);
+  // row.appendChild(column);
+  row.appendChild(context.getTableForList());
   return container;
 }
