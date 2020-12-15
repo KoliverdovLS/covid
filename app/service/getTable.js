@@ -15,11 +15,14 @@ export default function getTableList(context) {
       const columnFlag = document.createElement('div');
       const columnCases = document.createElement('div');
       columnName.className = ('col-6 m-0 fs-5');
-      columnFlag.className = ('col-2 m-0 p-0');
+      columnFlag.className = ('col-2 m-0 p-3');
       columnCases.className = ('col-4 m-0 p-0 ps-1 fs-5');
 
       columnName.textContent = Country;
-      columnFlag.innerHTML = `<img src="https://www.countryflags.io/${CountryCode}/flat/32.png">`;
+      columnFlag.style.backgroundImage = `url(https://www.countryflags.io/${CountryCode}/flat/32.png)`;
+      columnFlag.style.backgroundRepeat = 'no-repeat';
+      columnFlag.style.backgroundPosition = 'center';
+      columnFlag.style.backgroundSize = 'initial';
       columnCases.textContent = TotalConfirmed;
       row.appendChild(columnName);
       row.appendChild(columnFlag);
