@@ -8,19 +8,17 @@ export default function getTableList(context) {
   container.className = ('container-fluid p-0 m-0 height');
 
   summaryByCountry().then((info) => {
-    // console.log(info);
-    const countries = info.Countries;
-    // console.log(countries);
-    countries.map((i) => {
+    const { Countries } = info;
+    Countries.map((i) => {
       const { Country, CountryCode, TotalConfirmed } = i;
       const row = document.createElement('div');
       row.className = ('row justify-content-around p-0 align-items-center');
       const columnName = document.createElement('div');
       const columnFlag = document.createElement('div');
       const columnCases = document.createElement('div');
-      columnName.className = ('col-5 m-0 fs-6 bg-light');
-      columnFlag.className = ('col-1 m-0 p-0 fs-6 bg-light');
-      columnCases.className = ('col-3 m-0 p-0 ps-1 fs-6 bg-light');
+      columnName.className = ('col-6 m-0 fs-6 bg-light');
+      columnFlag.className = ('col-2 m-0 p-0 fs-6 bg-light');
+      columnCases.className = ('col-4 m-0 p-0 ps-1 fs-6 bg-light');
 
       columnName.textContent = Country;
       columnFlag.innerHTML = `<img src="https://www.countryflags.io/${CountryCode}/flat/32.png">`;
