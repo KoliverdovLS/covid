@@ -17,6 +17,7 @@ import table from './components/table';
 import list from './components/list';
 import map from './components/map';
 import graph from './components/graph';
+import title from './components/title';
 
 
 const dashBoard = {
@@ -27,6 +28,10 @@ const dashBoard = {
 
   getTable() {
     return table(this);
+  },
+
+  getTitle() {
+    return title(this);
   },
 
   getList() {
