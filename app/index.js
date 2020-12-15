@@ -25,7 +25,7 @@ const columnForMap = document.createElement('div');
 columnForMap.className = ('p-4 col-5 h3 bg-light border');
 
 const columnForList = document.createElement('div');
-columnForList.className = ('p-4 col-3 h3 bg-light border');
+columnForList.className = ('p-4 col-3 h3 bg-light border overflow-auto');
 
 const columnForTable = document.createElement('div');
 columnForTable.className = ('p-4 col-12 h3 bg-light border');
