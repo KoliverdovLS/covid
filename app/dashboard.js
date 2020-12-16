@@ -22,6 +22,7 @@ import title from './components/title';
 import getTableList from './service/getTable';
 import search from './components/search';
 import filterCountries from './service/filterContries';
+import getCorrectDataType from './service/getCorrectDataType';
 // import { render } from './index';
 
 
@@ -32,10 +33,15 @@ const dashBoard = {
   graph: 'graph',
   destination: false,
   search: '',
+  dataToShow: 'overall', // 'overall', 'deaths', 'recov'
 
   // init() {
   //   return render(this);
   // },
+
+  getCorrectTypeOfData() {
+    return getCorrectDataType(this);
+  },
 
   getSearchField() {
     return search(this);

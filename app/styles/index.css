@@ -20,13 +20,18 @@
   overflow-y: scroll;
 }
 
-
 .rowHeight {
   height: 53vh;
   min-height:53vh;
   max-height: 53vh;
   /* height:fit-content; */
 }
+.title-font {
+  /* font-size: 8px; */
+
+}
+
+
 .redb {
   border: 1px solid firebrick;
 }
