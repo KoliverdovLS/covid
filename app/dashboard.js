@@ -12,7 +12,7 @@ import {
   getDayOneAllStatus,
   getDayOneAnyStatusLive,
   getOneTotal,
-  getFlag,
+  getGMap,
 } from './service/getData';
 import table from './components/table';
 import list from './components/list';
@@ -23,6 +23,7 @@ import getTableList from './service/getTable';
 import search from './components/search';
 import filterCountries from './service/filterContries';
 import getCorrectDataType from './service/getCorrectDataType';
+import getMap from './service/getMap';
 // import { render } from './index';
 
 
@@ -38,6 +39,7 @@ const dashBoard = {
   // init() {
   //   return render(this);
   // },
+
 
   getCorrectTypeOfData() {
     return getCorrectDataType(this);
@@ -65,6 +67,10 @@ const dashBoard = {
 
   getList() {
     return list(this);
+  },
+
+  getTheMap() {
+    return getMap(this);
   },
 
   getMap() {

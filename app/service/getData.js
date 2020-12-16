@@ -277,27 +277,33 @@ async function getByCountryTotalAllStatus(slug) {
   await getInfoByCountryTotalAllStatus();
   return list;
 }
-// according to https://www.countryflags.io/ do not use!!
-async function getFlag(code = 'be', type = 'flat', size = '32') {
-  let list = '';
-  const url = `https://www.countryflags.io/${code}/${type}/${size}.png`;
-  const getFlagPng = async () => {
+
+async function getGMap() {
+  // let key = 'AIzaSyCGBLwir5nz5K2UTtZc5c-7NCN2NzVuNoA';
+  // const url = `https://maps.googleapis.com/maps/api/js`;
+  const map = '';
+  const getGoogleMap = async () => {
     try {
       const response = await axios({
         method: 'get',
         url: `${url}`,
+        params: {
+          key: 'AIzaSyCGBLwir5nz5K2UTtZc5c-7NCN2NzVuNoA',
+          callback: 'initMap',
+        }
       });
-      list = (response);
+      map = response;
     } catch (e) {
       console.log(e);
     }
   };
-  await getFlagPng();
-  return list;
+  await getGoogleMap();
+  return map;
 }
 
 
 export {
+  getGMap,
   getByCountryTotalAllStatus,
   getByCountryTotal,
   getByCountryLive,
