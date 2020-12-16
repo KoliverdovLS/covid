@@ -4,7 +4,7 @@ export default function search(context) {
   const row = document.createElement('div');
   const column = document.createElement('div');
   container.className = ('container-fluid m-0 p-0 bg-light');
-  row.className = ('row justify-content-center align-items-center m-0 p-0');
+  row.className = ('row justify-content-center align-items-center m-0 p-1');
   column.className = ('col h3 bg-success m-0 p-0');
   container.appendChild(row);
   row.appendChild(column);

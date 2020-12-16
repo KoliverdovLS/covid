@@ -4,10 +4,8 @@ import "@babel/polyfill";
 import './styles/index.css';
 
 
-// function render(context) {
-// document.body.innerHTML = '';
 const container = document.createElement('div');
-container.className = ('container-fluid vh-100 mvh-100');
+container.className = ('container-fluid p-0 height align-items-stretch');
 
 const rowtitle = document.createElement('div');
 rowtitle.className = ('row justify-content-end bg-light');
@@ -16,7 +14,7 @@ const rowtop = document.createElement('div');
 rowtop.className = ('row justify-content-end bg-light');
 
 const rowlow = document.createElement('div');
-rowlow.className = ('row justify-content-end bg-light');
+rowlow.className = ('row justify-content-between bg-light align-items-stretch m-0 p-0 rowHeight');
 
 const columnForTitle = document.createElement('div');
 columnForTitle.className = ('p-4 col-12 h3 bg-light border');
@@ -28,7 +26,7 @@ const columnForMap = document.createElement('div');
 columnForMap.className = ('p-4 col-5 h3 bg-light border');
 
 const columnForList = document.createElement('div');
-columnForList.className = ('p-3 col-3 h3 bg-light border');
+columnForList.className = ('p-0 m-0 col-3 h3 bg-light border redb');
 
 const columnForTable = document.createElement('div');
 columnForTable.className = ('p-2 col-12 h3 bg-light border');
@@ -51,10 +49,6 @@ container.appendChild(rowlow);
 
 
 document.body.appendChild(container);
-// }
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   dashBoard.init();
-// });
-
-// export { render };
+console.log(window.outerHeight);
+console.log(window.screen.availHeight);
