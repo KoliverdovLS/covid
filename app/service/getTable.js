@@ -4,10 +4,11 @@ import { changeTableOnCountry } from './changeTable';
 
 export default function getTableList(context) {
   const container = document.createElement('div');
-  container.className = ('container-fluid p-0 m-0 height');
+  container.className = ('container-fluid p-0 m-0');
   summaryByCountry().then((info) => {
     const { Countries } = info;
-    Countries.map((i) => {
+    // (context.getFilteredArrayOfCountries()(Countries));
+    context.getFilteredArrayOfCountries()(Countries).map((i) => {
       const { Country, CountryCode, TotalConfirmed } = i;
       const row = document.createElement('div');
       row.className = ('row justify-content-center p-0 align-items-center');

@@ -20,6 +20,8 @@ import map from './components/map';
 import graph from './components/graph';
 import title from './components/title';
 import getTableList from './service/getTable';
+import search from './components/search';
+import filterCountries from './service/filterContries';
 // import { render } from './index';
 
 
@@ -29,10 +31,19 @@ const dashBoard = {
   map: 'map',
   graph: 'graph',
   destination: false,
+  search: '',
 
   // init() {
   //   return render(this);
   // },
+
+  getSearchField() {
+    return search(this);
+  },
+
+  getFilteredArrayOfCountries() {
+    return filterCountries(this);
+  },
 
   getTableForList() {
     return getTableList(this);
