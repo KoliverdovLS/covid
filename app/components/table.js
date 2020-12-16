@@ -6,12 +6,12 @@ export default function table(context) {
   container.className = ('container-fluid bg-dark p-0');
   console.log(context.destination);
   summaryByCountry().then((data) => {
-    console.log(data);
+    // console.log(data);
     const { Date, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered } } = data;
-    console.log(Date);
-    console.log(TotalConfirmed);
-    console.log(TotalDeaths);
-    console.log(TotalRecovered);
+    // console.log(Date);
+    // console.log(TotalConfirmed);
+    // console.log(TotalDeaths);
+    // console.log(TotalRecovered);
     const row = document.createElement('div');
     const columnDest = document.createElement('div');
     const columnCases = document.createElement('div');

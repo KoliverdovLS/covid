@@ -7,7 +7,8 @@ export default function getTableList(context) {
   container.className = ('container-fluid p-0 m-0');
   summaryByCountry().then((info) => {
     const { Countries } = info;
-    Countries.map((i) => {
+    // (context.getFilteredArrayOfCountries()(Countries));
+    context.getFilteredArrayOfCountries()(Countries).map((i) => {
       const { Country, CountryCode, TotalConfirmed } = i;
       const row = document.createElement('div');
       row.className = ('row justify-content-center p-0 align-items-center');
