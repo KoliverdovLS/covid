@@ -4,8 +4,6 @@ import "@babel/polyfill";
 import './styles/index.css';
 
 
-// function render(context) {
-// document.body.innerHTML = '';
 const container = document.createElement('div');
 container.className = ('container-fluid vh-100 mvh-100');
 
@@ -51,10 +49,6 @@ container.appendChild(rowlow);
 
 
 document.body.appendChild(container);
-// }
 
-// window.addEventListener('DOMContentLoaded', () => {
-//   dashBoard.init();
-// });
-
-// export { render };
+console.log(window.outerHeight);
+console.log(window.screen.availHeight);
