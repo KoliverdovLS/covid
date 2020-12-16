@@ -1,3 +1,9 @@
+.gmap {
+  font-size: 12px;
+  height: 55vh;
+  min-height:55vh;
+  max-height: 55vh;
+}
 .height {
   height: 100vh;
   min-height: 100vh;
