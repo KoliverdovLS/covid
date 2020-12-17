@@ -1,8 +1,14 @@
 .menu-container {
   position:absolute;
   height: 30px;
-  background-color: firebrick;
+  background-color: rgba(178, 34, 34, 0.481);
+  border: 1px solid firebrick;
   display: flex;
   top: -30px;
   left: 0;
+
+}
+
+.first-column, .second-column, .third-column {
+  text-align: center;
 }
