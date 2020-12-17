@@ -62,10 +62,16 @@
 .menu-container {
   position:absolute;
   height: 30px;
-  background-color: firebrick;
+  background-color: rgba(178, 34, 34, 0.481);
+  border: 1px solid firebrick;
   display: flex;
   top: -30px;
   left: 0;
+  /* opacity: 0.5; */
+}
+
+.first-column, .second-column, .third-column {
+  text-align: center;
 }
 @charset "UTF-8";/*!
  * Bootstrap v5.0.0-beta1 (https://getbootstrap.com/)
