@@ -12,9 +12,14 @@ export default function showPopUpMenu(context) {
   columnSecond.className = 'second-column m-0 p-0 col-5 fs-6';
   columnThird.className = 'third-column m-0 p-0 col-5 fs-6';
 
+  const all = context.optAllLastDay === 'all' ? '<span><b>All</b></span>' : '<span>All</span>';
+  const day = context.optAllLastDay === 'all' ? '<span>Last day</span>' : '<span><b>Last day</b></span>';
+  const total = context.optTotalPer100 === 'total' ? '<span><b>Total</b></span>' : '<span>Total</span>';
+  const per100 = context.optTotalPer100 === 'total' ? '<span>per 100 k</span>' : '<span><b>per 100 k</b></span>';
+
   columnFirst.innerHTML = '<span>Enlarge</span>';
-  columnSecond.innerHTML = '<span>All</span> | <span>Last day</span>';
-  columnThird.innerHTML = '<span>Total</span> | <span>per 100 k</span>';
+  columnSecond.innerHTML = `${all} | ${day}`;
+  columnThird.innerHTML = `${total} | ${per100}`;
 
   container.appendChild(columnFirst);
   container.appendChild(columnSecond);

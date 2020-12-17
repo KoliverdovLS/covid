@@ -29,13 +29,15 @@ import showPopUpMenu from './components/menu';
 
 
 const dashBoard = {
-  table: 'table',
-  list: 'list',
-  map: 'map',
-  graph: 'graph',
-  destination: false,
-  search: '',
-  dataToShow: 'overall', // 'overall', 'deaths', 'recov'
+  table: 'table', // - is not important
+  list: 'list', // - is not important
+  map: 'map', // - is not important
+  graph: 'graph', // - is not important
+  destination: false, // - what place to show according to the exact choice
+  search: '', // the input value in search field in real time
+  dataToShow: 'overall', // 'overall', 'deaths', 'recov' - to show what kind of data
+  optAllLastDay: 'all', // 'all', 'day' - to show all data or last day data
+  optTotalPer100: 'total', // 'total', 'per' - to show total cases or pre 100 k population data
 
   addPopUpMenu() {
     return showPopUpMenu(this);
