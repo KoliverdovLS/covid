@@ -4,7 +4,8 @@ import img from '../assets/keyboard.svg';
 export default function menuToShowKeyboard(context) {
   const container = document.createElement('div');
   container.className = ('keyboard-menu-container p-0 justify-content-between align-items-center');
-  container.style.backgroundImage = `url(./${img})`;
+  console.log(img);
+  container.style.backgroundImage = `url(${img})`;
   container.style.backgroundRepeat = 'no-repeat';
   container.style.backgroundPosition = 'center';
   container.style.backgroundSize = 'contain';
