@@ -30,6 +30,7 @@
     "@babel/polyfill": "^7.12.1",
     "@googlemaps/js-api-loader": "^1.11.1",
     "@popperjs/core": "^2.6.0",
+    "apexcharts": "^3.23.0",
     "axios": "^0.21.0",
     "bootstrap": "^5.0.0-beta1",
     "normalize.css": "^8.0.1",

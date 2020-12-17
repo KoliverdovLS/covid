@@ -36,7 +36,7 @@ columnForGraph.appendChild(dashBoard.getGraph());
 columnForList.appendChild(dashBoard.getList());
 columnForMap.appendChild(dashBoard.getMap());
 columnForTable.appendChild(dashBoard.getTable());
-
+dashBoard.addGraphToDom();
 rowtitle.appendChild(columnForTitle);
 rowtop.appendChild(columnForTable);
 rowlow.appendChild(columnForList);

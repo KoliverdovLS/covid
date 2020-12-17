@@ -24,6 +24,7 @@ import search from './components/search';
 import filterCountries from './service/filterContries';
 import getCorrectDataType from './service/getCorrectDataType';
 import getMap from './service/getMap';
+import createGraph from './service/createGraph';
 // import { render } from './index';
 
 
@@ -40,6 +41,9 @@ const dashBoard = {
   //   return render(this);
   // },
 
+  addGraphToDom() {
+    return createGraph(this);
+  },
 
   getCorrectTypeOfData() {
     return getCorrectDataType(this);

@@ -56,46 +56,50 @@ export default function getTableList(context) {
   summaryByCountry().then((info) => {
     const { Countries } = info;
     console.log(info);
-    context.getFilteredArrayOfCountries()(Countries).map((i) => {
-      const { Country, CountryCode, TotalConfirmed, TotalDeaths, TotalRecovered } = i;
-      // console.log(i);
-      const row = document.createElement('div');
-      row.className = ('row justify-content-center p-0 align-items-center');
-      const columnName = document.createElement('div');
-      const columnFlag = document.createElement('div');
-      const columnCases = document.createElement('div');
-      columnName.className = ('col-6 m-0 fs-6');
-      columnFlag.className = ('col-2 m-0 p-3');
-      columnCases.className = ('col-4 m-0 p-0 ps-1 fs-6');
+    try {
+      context.getFilteredArrayOfCountries()(Countries).map((i) => {
+        const { Country, CountryCode, TotalConfirmed, TotalDeaths, TotalRecovered } = i;
+        // console.log(i);
+        const row = document.createElement('div');
+        row.className = ('row justify-content-center p-0 align-items-center');
+        const columnName = document.createElement('div');
+        const columnFlag = document.createElement('div');
+        const columnCases = document.createElement('div');
+        columnName.className = ('col-6 m-0 fs-6');
+        columnFlag.className = ('col-2 m-0 p-3');
+        columnCases.className = ('col-4 m-0 p-0 ps-1 fs-6');
 
-      columnName.textContent = Country;
-      columnFlag.style.backgroundImage = `url(https://www.countryflags.io/${CountryCode}/flat/32.png)`;
-      columnFlag.style.backgroundRepeat = 'no-repeat';
-      columnFlag.style.backgroundPosition = 'center';
-      columnFlag.style.backgroundSize = 'initial';
-      columnCases.textContent = i[context.getCorrectTypeOfData()];
-      row.appendChild(columnName);
-      row.appendChild(columnFlag);
-      row.appendChild(columnCases);
-      container.appendChild(row);
+        columnName.textContent = Country;
+        columnFlag.style.backgroundImage = `url(https://www.countryflags.io/${CountryCode}/flat/32.png)`;
+        columnFlag.style.backgroundRepeat = 'no-repeat';
+        columnFlag.style.backgroundPosition = 'center';
+        columnFlag.style.backgroundSize = 'initial';
+        columnCases.textContent = i[context.getCorrectTypeOfData()];
+        row.appendChild(columnName);
+        row.appendChild(columnFlag);
+        row.appendChild(columnCases);
+        container.appendChild(row);
 
-      row.addEventListener('mouseenter', (e) => {
-        e.target.classList.add('bg-white');
+        row.addEventListener('mouseenter', (e) => {
+          e.target.classList.add('bg-white');
+        });
+        row.addEventListener('mouseleave', (e) => {
+          e.target.classList.remove('bg-white');
+        });
+        row.addEventListener('click', (e) => {
+          // e.stopImmediatePropagation();
+          // e.preventDefault();
+          // e.stopPropagation();
+          // console.log(e.target.parentNode.children[0].textContent);
+          // console.log(e.target);
+          context.destination = e.target.parentNode.children[0].textContent;
+          // context.init();
+          changeTableOnCountry(context, e);
+        })
       });
-      row.addEventListener('mouseleave', (e) => {
-        e.target.classList.remove('bg-white');
-      });
-      row.addEventListener('click', (e) => {
-        // e.stopImmediatePropagation();
-        // e.preventDefault();
-        // e.stopPropagation();
-        // console.log(e.target.parentNode.children[0].textContent);
-        // console.log(e.target);
-        context.destination = e.target.parentNode.children[0].textContent;
-        // context.init();
-        changeTableOnCountry(context, e);
-      })
-    });
+    } catch (e) {
+      console.log(e);
+    }
   });
 
   return container;
