@@ -19,7 +19,7 @@ export default function createGraph(context) {
     console.log(elem);
     const chart = new ApexCharts(elem, options);
     chart.render();
-  }, 2000)
+  }, 1000)
 }
 
 

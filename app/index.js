@@ -5,7 +5,7 @@ import './styles/index.css';
 
 
 const container = document.createElement('div');
-container.className = ('container-fluid p-0 height align-items-stretch');
+container.className = ('container-fluid p-0 height align-items-stretch overflow-hidden');
 
 const rowtitle = document.createElement('div');
 rowtitle.className = ('row justify-content-end bg-light');
@@ -20,13 +20,13 @@ const columnForTitle = document.createElement('div');
 columnForTitle.className = ('p-4 col-12 h3 bg-light border');
 
 const columnForGraph = document.createElement('div');
-columnForGraph.className = ('p-4 col-4 h3 bg-light border');
+columnForGraph.className = ('p-0 col-4 bg-light border');
 
 const columnForMap = document.createElement('div');
-columnForMap.className = ('p-4 col-5 h3 bg-light border');
+columnForMap.className = ('p-0 col-5 bg-light border');
 
 const columnForList = document.createElement('div');
-columnForList.className = ('p-0 m-0 col-3 h3 bg-light border redb');
+columnForList.className = ('p-0 m-0 col-3 h3 bg-light border');
 
 const columnForTable = document.createElement('div');
 columnForTable.className = ('p-2 col-12 h3 bg-light border');

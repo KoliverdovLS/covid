@@ -25,7 +25,7 @@ import filterCountries from './service/filterContries';
 import getCorrectDataType from './service/getCorrectDataType';
 import getMap from './service/getMap';
 import createGraph from './service/createGraph';
-// import { render } from './index';
+import showPopUpMenu from './components/menu';
 
 
 const dashBoard = {
@@ -37,9 +37,9 @@ const dashBoard = {
   search: '',
   dataToShow: 'overall', // 'overall', 'deaths', 'recov'
 
-  // init() {
-  //   return render(this);
-  // },
+  addPopUpMenu() {
+    return showPopUpMenu(this);
+  },
 
   addGraphToDom() {
     return createGraph(this);
