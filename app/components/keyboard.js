@@ -8,8 +8,8 @@ export default function keyboard(context) {
   container.className = ('container-fluid');
   row.className = ('row justify-content-center align-items-center');
   column.className = ('col h3 bg-success border simple-keyboard');
-  column.textContent = 'table';
   container.appendChild(row);
+  row.appendChild(column);
   let keyboard = new Keyboard({
     onChange: input => onChange(input),
     onKeyPress: button => onKeyPress(button)
@@ -23,6 +23,5 @@ export default function keyboard(context) {
   function onKeyPress(button) {
     console.log("Button pressed", button);
   }
-  row.appendChild(keyboard);
   return container;
 }

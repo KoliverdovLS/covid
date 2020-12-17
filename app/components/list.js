@@ -18,8 +18,8 @@ export default function list(context) {
 
   container.addEventListener('mouseleave', (e) => {
     if (e.target.tagName === 'DIV') {
-      container.removeChild(document.querySelector('.menu-container'));
-      container.removeChild(document.querySelector('.keyboard-menu-container'));
+      document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+      document.querySelectorAll('.keyboard-menu-container').forEach((i) => i.remove());
     };
   });
 

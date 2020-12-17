@@ -9,9 +9,6 @@ export default function menuToShowKeyboard(context) {
   container.style.backgroundRepeat = 'no-repeat';
   container.style.backgroundPosition = 'center';
   container.style.backgroundSize = 'contain';
-
-  // container.appendChild(columnFirst);
-
   container.addEventListener('click', (e) => {
     console.log('hi');
     const containerForKeybord = document.querySelector('.list-container');
