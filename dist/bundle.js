@@ -367,7 +367,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ menuToShowKeyboard; }\n/* harmony export */ });\n/* harmony import */ var _styles_keyboardMenu_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/keyboardMenu.css */ \"./styles/keyboardMenu.css\");\n\nfunction menuToShowKeyboard(context) {\n  var container = document.createElement('div');\n  container.className = 'keyboard-menu-container p-0 justify-content-between align-items-center';\n  container.style.backgroundImage = \"url('/app/assets/keyboard.svg')\";\n  container.style.backgroundRepeat = 'no-repeat';\n  container.style.backgroundPosition = 'center';\n  container.style.backgroundSize = 'contain'; // container.appendChild(columnFirst);\n\n  container.addEventListener('click', function (e) {\n    console.log('hi');\n    var containerForKeybord = document.querySelector('.list-container'); // containerForKeybord.appendChild(context.getKeyBoard());\n  });\n  return container;\n}\n\n//# sourceURL=webpack:///./components/keyboardMenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ menuToShowKeyboard; }\n/* harmony export */ });\n/* harmony import */ var _styles_keyboardMenu_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/keyboardMenu.css */ \"./styles/keyboardMenu.css\");\n/* harmony import */ var _assets_keyboard_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/keyboard.svg */ \"./assets/keyboard.svg\");\n\n\nfunction menuToShowKeyboard(context) {\n  var container = document.createElement('div');\n  container.className = 'keyboard-menu-container p-0 justify-content-between align-items-center';\n  container.style.backgroundImage = \"url(./\".concat(_assets_keyboard_svg__WEBPACK_IMPORTED_MODULE_1__.default, \")\");\n  container.style.backgroundRepeat = 'no-repeat';\n  container.style.backgroundPosition = 'center';\n  container.style.backgroundSize = 'contain'; // container.appendChild(columnFirst);\n\n  container.addEventListener('click', function (e) {\n    console.log('hi');\n    var containerForKeybord = document.querySelector('.list-container'); // containerForKeybord.appendChild(context.getKeyBoard());\n  });\n  return container;\n}\n\n//# sourceURL=webpack:///./components/keyboardMenu.js?");
 
 /***/ }),
 
@@ -3675,6 +3675,17 @@ eval("__webpack_require__(/*! ../modules/web.timers */ \"../node_modules/core-js
 
 /***/ }),
 
+/***/ "./assets/keyboard.svg":
+/*!*****************************!*\
+  !*** ./assets/keyboard.svg ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"83b24327ad88536c28ef9bb476a86e40.svg\");\n\n//# sourceURL=webpack:///./assets/keyboard.svg?");
+
+/***/ }),
+
 /***/ "./styles/graph.css":
 /*!**************************!*\
   !*** ./styles/graph.css ***!
@@ -3822,6 +3833,18 @@ eval("/*!\n * \n *   simple-keyboard v2.32.66\n *   https://github.com/hodgef/si
 /******/ 		};
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	!function() {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function() {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
@@ -3836,6 +3859,26 @@ eval("/*!\n * \n *   simple-keyboard v2.32.66\n *   https://github.com/hodgef/si
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	!function() {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	}();
 /******/ 	
 /************************************************************************/
