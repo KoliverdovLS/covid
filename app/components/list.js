@@ -10,14 +10,20 @@ export default function list(context) {
   row.appendChild(context.getTableForList());
 
   container.addEventListener('mouseenter', (e) => {
+    if (document.querySelector('.menu-container') || document.querySelector('.keyboard-menu-container')) {
+      return;
+    }
+
     if (e.fromElement.tagName === 'DIV') {
       container.appendChild(context.addPopUpMenu());
+      container.appendChild(context.getMenuToShowKeyboard());
     };
   });
 
   container.addEventListener('mouseleave', (e) => {
     if (e.target.tagName === 'DIV') {
-      container.removeChild(document.querySelector('.menu-container'));
+      document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+      document.querySelectorAll('.keyboard-menu-container').forEach((i) => i.remove());
     };
   });
 
