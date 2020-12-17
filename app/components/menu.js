@@ -26,7 +26,16 @@ export default function showPopUpMenu(context) {
   container.appendChild(columnThird);
 
   container.addEventListener('click', (e) => {
-    console.log(e.target);
+    const value = e.target.textContent;
+    context.changeFilterOptions()(value);
+    const parentContainer = document.querySelector('.list-container');
+    const newAll = context.optAllLastDay === 'all' ? '<span><b>All</b></span>' : '<span>All</span>';
+    const newDay = context.optAllLastDay === 'all' ? '<span>Last day</span>' : '<span><b>Last day</b></span>';
+    const newTotal = context.optTotalPer100 === 'total' ? '<span><b>Total</b></span>' : '<span>Total</span>';
+    const newPer100 = context.optTotalPer100 === 'total' ? '<span>per 100 k</span>' : '<span><b>per 100 k</b></span>';
+    columnSecond.innerHTML = `${newAll} | ${newDay}`;
+    columnThird.innerHTML = `${newTotal} | ${newPer100}`;
+    return;
   });
 
   return container;

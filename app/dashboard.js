@@ -26,7 +26,7 @@ import getCorrectDataType from './service/getCorrectDataType';
 import getMap from './service/getMap';
 import createGraph from './service/createGraph';
 import showPopUpMenu from './components/menu';
-
+import changeFilterOption from './service/changeFilterOption';
 
 const dashBoard = {
   table: 'table', // - is not important
@@ -38,6 +38,10 @@ const dashBoard = {
   dataToShow: 'overall', // 'overall', 'deaths', 'recov' - to show what kind of data
   optAllLastDay: 'all', // 'all', 'day' - to show all data or last day data
   optTotalPer100: 'total', // 'total', 'per' - to show total cases or pre 100 k population data
+
+  changeFilterOptions() {
+    return changeFilterOption(this);
+  },
 
   addPopUpMenu() {
     return showPopUpMenu(this);

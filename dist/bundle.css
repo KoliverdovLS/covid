@@ -4,8 +4,12 @@
   min-height:55vh;
   max-height: 55vh;
 }
-.graph-cont {
 
+.map-container {
+  position: relative;
+}
+.graph-container {
+  position: relative;
 }
 .height {
   height: 100vh;
@@ -67,7 +71,6 @@
   display: flex;
   top: -30px;
   left: 0;
-
 }
 
 .first-column, .second-column, .third-column {
