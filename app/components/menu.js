@@ -12,13 +12,17 @@ export default function showPopUpMenu(context) {
   columnSecond.className = 'second-column m-0 p-0 col-5 fs-6';
   columnThird.className = 'third-column m-0 p-0 col-5 fs-6';
 
-  columnFirst.textContent = 'Widen';
-  columnSecond.textContent = 'Option 1/2';
-  columnThird.textContent = 'Option 3/4';
+  columnFirst.innerHTML = '<span>Enlarge</span>';
+  columnSecond.innerHTML = '<span>All</span> | <span>Last day</span>';
+  columnThird.innerHTML = '<span>Total</span> | <span>per 100 k</span>';
 
   container.appendChild(columnFirst);
   container.appendChild(columnSecond);
   container.appendChild(columnThird);
+
+  container.addEventListener('click', (e) => {
+    console.log(e.target);
+  });
 
   return container;
 }
