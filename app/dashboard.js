@@ -27,6 +27,8 @@ import getMap from './service/getMap';
 import createGraph from './service/createGraph';
 import showPopUpMenu from './components/menu';
 import changeFilterOption from './service/changeFilterOption';
+import keyboard from './components/keyboard';
+import menuToShowKeyboard from './components/keyboardMenu';
 
 const dashBoard = {
   table: 'table', // - is not important
@@ -41,6 +43,14 @@ const dashBoard = {
 
   changeFilterOptions() {
     return changeFilterOption(this);
+  },
+
+  getMenuToShowKeyboard() {
+    return menuToShowKeyboard(this);
+  },
+
+  getKeyBoard() {
+    return keyboard(this);
   },
 
   addPopUpMenu() {

@@ -34,7 +34,8 @@
     "axios": "^0.21.0",
     "bootstrap": "^5.0.0-beta1",
     "normalize.css": "^8.0.1",
-    "sass": "^1.30.0"
+    "sass": "^1.30.0",
+    "simple-keyboard": "^2.32.66"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

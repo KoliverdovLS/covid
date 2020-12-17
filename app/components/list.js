@@ -12,12 +12,14 @@ export default function list(context) {
   container.addEventListener('mouseenter', (e) => {
     if (e.fromElement.tagName === 'DIV') {
       container.appendChild(context.addPopUpMenu());
+      container.appendChild(context.getMenuToShowKeyboard());
     };
   });
 
   container.addEventListener('mouseleave', (e) => {
     if (e.target.tagName === 'DIV') {
       container.removeChild(document.querySelector('.menu-container'));
+      container.removeChild(document.querySelector('.keyboard-menu-container'));
     };
   });
 

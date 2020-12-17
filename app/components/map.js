@@ -23,14 +23,12 @@ export default function map(context) {
   });
 
   container.addEventListener('mouseenter', (e) => {
-    console.log(e);
     if (e.fromElement.tagName === 'DIV') {
       container.appendChild(context.addPopUpMenu());
     };
   });
 
   container.addEventListener('mouseleave', (e) => {
-    console.log(e);
     if (e.target.tagName === 'DIV') {
       container.removeChild(document.querySelector('.menu-container'));
     };

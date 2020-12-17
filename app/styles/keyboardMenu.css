@@ -1,0 +1,10 @@
+.keyboard-menu-container {
+  position:absolute;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(178, 34, 34, 0.481);
+  border: 1px solid firebrick;
+  top: 0px;
+  right: -50px;
+  z-index: 1;
+}
