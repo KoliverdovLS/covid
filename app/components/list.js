@@ -10,6 +10,10 @@ export default function list(context) {
   row.appendChild(context.getTableForList());
 
   container.addEventListener('mouseenter', (e) => {
+    if (document.querySelector('.menu-container') || document.querySelector('.keyboard-menu-container')) {
+      return;
+    }
+
     if (e.fromElement.tagName === 'DIV') {
       container.appendChild(context.addPopUpMenu());
       container.appendChild(context.getMenuToShowKeyboard());
