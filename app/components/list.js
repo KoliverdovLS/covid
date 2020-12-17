@@ -9,12 +9,16 @@ export default function list(context) {
   row.appendChild(context.getSearchField());
   row.appendChild(context.getTableForList());
 
-  container.addEventListener('mouseenter', () => {
-    container.appendChild(context.addPopUpMenu());
+  container.addEventListener('mouseenter', (e) => {
+    if (e.fromElement.tagName === 'DIV') {
+      container.appendChild(context.addPopUpMenu());
+    };
   });
 
-  container.addEventListener('mouseleave', () => {
-    container.removeChild(document.querySelector('.menu-container'));
+  container.addEventListener('mouseleave', (e) => {
+    if (e.target.tagName === 'DIV') {
+      container.removeChild(document.querySelector('.menu-container'));
+    };
   });
 
   return container;

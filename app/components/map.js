@@ -5,7 +5,7 @@ export default function map(context) {
   const container = document.createElement('div');
   const row = document.createElement('div');
   const column = document.createElement('div');
-  container.className = ('container-fluid px-4');
+  container.className = ('map-container container-fluid px-4');
   row.className = ('row justify-content-center align-items-center gx-5');
   column.className = ('gmap col h3 bg-success border');
   container.appendChild(row);
@@ -21,5 +21,20 @@ export default function map(context) {
       zoom: 8,
     });
   });
+
+  container.addEventListener('mouseenter', (e) => {
+    console.log(e);
+    if (e.fromElement.tagName === 'DIV') {
+      container.appendChild(context.addPopUpMenu());
+    };
+  });
+
+  container.addEventListener('mouseleave', (e) => {
+    console.log(e);
+    if (e.target.tagName === 'DIV') {
+      container.removeChild(document.querySelector('.menu-container'));
+    };
+  });
+
   return container;
 }
