@@ -4,6 +4,9 @@
   min-height:55vh;
   max-height: 55vh;
 }
+.graph-cont {
+
+}
 .height {
   height: 100vh;
   min-height: 100vh;
@@ -37,6 +40,9 @@
 
 }
 
+.list-container {
+  position: relative;
+}
 
 .redb {
   border: 1px solid firebrick;
@@ -52,6 +58,14 @@
 
 .seb {
   border: 1px solid rgb(178, 34, 113);
+}
+.menu-container {
+  position:absolute;
+  height: 30px;
+  background-color: firebrick;
+  display: flex;
+  top: -30px;
+  left: 0;
 }
 @charset "UTF-8";/*!
  * Bootstrap v5.0.0-beta1 (https://getbootstrap.com/)

@@ -13,7 +13,7 @@ export default function map(context) {
   const loader = new Loader({
     apiKey: 'AIzaSyCGBLwir5nz5K2UTtZc5c-7NCN2NzVuNoA',
     version: "weekly",
-    callback: 'initMap',
+    // callback: 'initMap',
   });
   loader.load().then(() => {
     map = new google.maps.Map(document.querySelector('.gmap'), {
