@@ -50,3 +50,11 @@
 .seb {
   border: 1px solid rgb(178, 34, 113);
 }
+
+
+.keyboard-container {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 3;
+}

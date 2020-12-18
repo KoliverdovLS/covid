@@ -11,7 +11,7 @@ export default function search(context) {
   const input = document.createElement('input');
   input.setAttribute('type', 'text');
   input.setAttribute('placeholder', 'Search');
-  input.className = 'form-control'
+  input.className = 'form-control input-search'
   row.appendChild(input);
   input.addEventListener('input', (e) => {
     context.search = e.target.value;
