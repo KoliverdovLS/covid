@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node_modules\\.bin\\webpack --mode development",
-    "build": "node_modules\\.bin\\webpack --mode production",
-    "watch": "node_modules\\.bin\\webpack --mode development --watch"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
   },
   "browserslist": "> 0.25%, not dead",
   "repository": {
