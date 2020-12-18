@@ -13,12 +13,15 @@ export default function graph(context) {
   container.addEventListener('mouseenter', (e) => {
     if (e.fromElement.tagName === 'DIV') {
       container.appendChild(context.addPopUpMenu());
+      container.appendChild(context.getOverDeathRecovMenu());
+      document.querySelector('.menu-recov-container').classList.replace('menu-recov-container', 'graph-menu-recov-container');
     };
   });
 
   container.addEventListener('mouseleave', (e) => {
     if (e.target.tagName === 'DIV') {
-      container.removeChild(document.querySelector('.menu-container'));
+      document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+      document.querySelectorAll('.graph-menu-recov-container').forEach((i) => i.remove());
     };
   });
 
