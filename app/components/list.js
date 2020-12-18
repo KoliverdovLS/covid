@@ -27,6 +27,7 @@ export default function list(context) {
       document.querySelectorAll('.menu-container').forEach((i) => i.remove());
       document.querySelectorAll('.keyboard-menu-container').forEach((i) => i.remove());
       document.querySelectorAll('.menu-recov-container').forEach((i) => i.remove());
+      document.querySelectorAll('.keyboard-container').forEach((i) => i.remove());
     };
   });
 
