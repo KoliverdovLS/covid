@@ -17,6 +17,8 @@ export default function list(context) {
     if (e.fromElement.tagName === 'DIV') {
       container.appendChild(context.addPopUpMenu());
       container.appendChild(context.getMenuToShowKeyboard());
+      container.appendChild(context.getOverDeathRecovMenu());
+
     };
   });
 
@@ -24,6 +26,7 @@ export default function list(context) {
     if (e.target.tagName === 'DIV') {
       document.querySelectorAll('.menu-container').forEach((i) => i.remove());
       document.querySelectorAll('.keyboard-menu-container').forEach((i) => i.remove());
+      document.querySelectorAll('.menu-recov-container').forEach((i) => i.remove());
     };
   });
 

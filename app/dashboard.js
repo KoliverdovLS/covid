@@ -29,13 +29,14 @@ import showPopUpMenu from './components/menu';
 import changeFilterOption from './service/changeFilterOption';
 import keyboard from './components/keyboard';
 import menuToShowKeyboard from './components/keyboardMenu';
+import overDeathRecovMenu from './components/overDeathRecovMenu';
 
 const dashBoard = {
   table: 'table', // - is not important
   list: 'list', // - is not important
   map: 'map', // - is not important
   graph: 'graph', // - is not important
-  destination: false, // - what place to show according to the exact choice
+  destination: false, // - what place to show according to the exact choice in the list
   search: '', // the input value in search field in real time
   dataToShow: 'overall', // 'overall', 'deaths', 'recov' - to show what kind of data
   optAllLastDay: 'all', // 'all', 'day' - to show all data or last day data
@@ -43,6 +44,10 @@ const dashBoard = {
 
   changeFilterOptions() {
     return changeFilterOption(this);
+  },
+
+  getOverDeathRecovMenu() {
+    return overDeathRecovMenu(this);
   },
 
   getMenuToShowKeyboard() {

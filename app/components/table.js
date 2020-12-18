@@ -1,9 +1,10 @@
 import { getCountries, summaryByCountry } from '../service/getData';
+import '../styles/table.css';
 
 export default function table(context) {
   const { destination } = context;
   const container = document.createElement('div');
-  container.className = ('container-fluid bg-dark p-0');
+  container.className = ('table-container container-fluid bg-dark p-0');
   console.log(context.destination);
   summaryByCountry().then((data) => {
     // console.log(data);
@@ -71,6 +72,24 @@ export default function table(context) {
     row.appendChild(columnDeath);
     row.appendChild(columnRecov);
   })
+
+  container.addEventListener('mouseenter', (e) => {
+    if (document.querySelector('.menu-container') || document.querySelector('.keyboard-menu-container')) {
+      return;
+    }
+
+    if (e.fromElement.tagName === 'DIV') {
+      container.appendChild(context.addPopUpMenu());
+    };
+  });
+
+  container.addEventListener('mouseleave', (e) => {
+    if (e.target.tagName === 'DIV') {
+      document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+    };
+  });
+
+
 
   return container;
 }
