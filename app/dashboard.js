@@ -108,7 +108,7 @@ const dashBoard = {
     return getMap(this);
   },
 
-  getMap() {
+  getMapContainer() {
     return map(this);
   },
 

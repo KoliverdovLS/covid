@@ -30,11 +30,11 @@ export default function getTableList(context) {
 
   summaryByCountry().then((info) => {
     const { Countries } = info;
-    console.log(info);
+    // console.log(info);
     try {
       context.getFilteredArrayOfCountries()(Countries).map((i) => {
         const { Country, CountryCode, Premium: { CountryStats: { Population } }, TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = i;
-        console.log(i);
+        // console.log(i);
         const row = document.createElement('div');
         row.className = ('row justify-content-center p-0 align-items-center');
         const columnName = document.createElement('div');
