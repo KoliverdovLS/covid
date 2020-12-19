@@ -25,12 +25,11 @@ export default function overDeathRecovMenu(context) {
   container.appendChild(columnFirst);
 
   container.addEventListener('click', (e) => {
-    console.log(e.target.textContent);
+    // console.log(e.target.textContent);
     let value = e.target.textContent.toLowerCase();
     if (value !== 'overall' && value !== 'deaths' && value !== 'recoveries') {
       return;
     }
-    // context.changeFilterOptions()(value);
     value = value === 'recoveries' ? 'recov' : value;
     context.dataToShow = value;
     const parentContainer = document.querySelector('.list-container');
@@ -38,7 +37,6 @@ export default function overDeathRecovMenu(context) {
     const dom = context.getTableForList(context);
     const listRow = document.querySelector('.list-row');
     const listRowChildren = document.querySelector('.list-row').children[1];
-    // console.log(listRowChildren);
     listRowChildren.remove();
     listRow.appendChild(dom);
 

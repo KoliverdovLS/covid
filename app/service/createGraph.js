@@ -16,7 +16,6 @@ export default function createGraph(context) {
 
   setTimeout(() => {
     const elem = document.querySelector(".graph-cont");
-    console.log(elem);
     const chart = new ApexCharts(elem, options);
     chart.render();
   }, 1000)

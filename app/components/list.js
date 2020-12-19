@@ -13,13 +13,15 @@ export default function list(context) {
     if (document.querySelector('.menu-container') || document.querySelector('.keyboard-menu-container')) {
       return;
     }
+    try {
+      if (e.fromElement.tagName === 'DIV') {
+        container.appendChild(context.addPopUpMenu());
+        container.appendChild(context.getMenuToShowKeyboard());
+        container.appendChild(context.getOverDeathRecovMenu());
+      };
+    } catch (error) {
 
-    if (e.fromElement.tagName === 'DIV') {
-      container.appendChild(context.addPopUpMenu());
-      container.appendChild(context.getMenuToShowKeyboard());
-      container.appendChild(context.getOverDeathRecovMenu());
-
-    };
+    }
   });
 
   container.addEventListener('mouseleave', (e) => {

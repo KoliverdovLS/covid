@@ -6,7 +6,6 @@ import 'simple-keyboard/build/css/index.css';
 export default function menuToShowKeyboard(context) {
   const container = document.createElement('div');
   container.className = ('keyboard-menu-container p-0 justify-content-between align-items-center');
-  console.log(img);
   container.style.backgroundImage = `url(${img})`;
   container.style.backgroundRepeat = 'no-repeat';
   container.style.backgroundPosition = 'center';

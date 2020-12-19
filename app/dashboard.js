@@ -30,8 +30,10 @@ import changeFilterOption from './service/changeFilterOption';
 import keyboard from './components/keyboard';
 import menuToShowKeyboard from './components/keyboardMenu';
 import overDeathRecovMenu from './components/overDeathRecovMenu';
-
+import getPer100 from './service/getPer100';
+import getCorrectDataToTheList from './service/getCorrectDataToTheList';
 const dashBoard = {
+  worldPopulation: 7809320722,
   table: 'table', // - is not important
   list: 'list', // - is not important
   map: 'map', // - is not important
@@ -44,6 +46,14 @@ const dashBoard = {
 
   changeFilterOptions() {
     return changeFilterOption(this);
+  },
+
+  getCorrectDataToTheListFunc() {
+    return getCorrectDataToTheList(this);
+  },
+
+  getPer100Data() {
+    return getPer100(this);
   },
 
   getOverDeathRecovMenu() {

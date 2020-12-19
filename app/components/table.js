@@ -5,14 +5,8 @@ export default function table(context) {
   const { destination } = context;
   const container = document.createElement('div');
   container.className = ('table-container container-fluid bg-dark p-0');
-  console.log(context.destination);
   summaryByCountry().then((data) => {
-    // console.log(data);
-    const { Date, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered } } = data;
-    // console.log(Date);
-    // console.log(TotalConfirmed);
-    // console.log(TotalDeaths);
-    // console.log(TotalRecovered);
+    const { Date, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } } = data;
     const row = document.createElement('div');
     const columnDest = document.createElement('div');
     const columnCases = document.createElement('div');
@@ -77,16 +71,23 @@ export default function table(context) {
     if (document.querySelector('.menu-container') || document.querySelector('.keyboard-menu-container')) {
       return;
     }
+    try {
+      if (e.fromElement.tagName === 'DIV') {
+        container.appendChild(context.addPopUpMenu());
+      };
+    } catch (error) {
 
-    if (e.fromElement.tagName === 'DIV') {
-      container.appendChild(context.addPopUpMenu());
-    };
+    }
   });
 
   container.addEventListener('mouseleave', (e) => {
-    if (e.target.tagName === 'DIV') {
-      document.querySelectorAll('.menu-container').forEach((i) => i.remove());
-    };
+    try {
+      if (e.target.tagName === 'DIV') {
+        document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+      };
+    } catch (error) {
+
+    }
   });
 
 

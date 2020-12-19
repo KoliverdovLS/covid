@@ -1,4 +1,5 @@
 import '../styles/menu.css';
+import { changeTableOnCountry } from '../service/changeTable';
 
 export default function showPopUpMenu(context) {
   const container = document.createElement('div');
@@ -35,6 +36,14 @@ export default function showPopUpMenu(context) {
     const newPer100 = context.optTotalPer100 === 'total' ? '<span>per 100 k</span>' : '<span><b>per 100 k</b></span>';
     columnSecond.innerHTML = `${newAll} | ${newDay}`;
     columnThird.innerHTML = `${newTotal} | ${newPer100}`;
+    changeTableOnCountry(context, e);
+
+    const dom = context.getTableForList(context);
+    const listRow = document.querySelector('.list-row');
+    const listRowChildren = document.querySelector('.list-row').children[1];
+    listRowChildren.remove();
+    listRow.appendChild(dom);
+
     return;
   });
 
