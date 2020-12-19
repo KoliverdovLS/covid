@@ -25,9 +25,32 @@ export default function overDeathRecovMenu(context) {
   container.appendChild(columnFirst);
 
   container.addEventListener('click', (e) => {
-    const value = e.target.textContent;
-    context.changeFilterOptions()(value);
+    console.log(e.target.textContent);
+    let value = e.target.textContent.toLowerCase();
+    if (value !== 'overall' && value !== 'deaths' && value !== 'recoveries') {
+      return;
+    }
+    // context.changeFilterOptions()(value);
+    value = value === 'recoveries' ? 'recov' : value;
+    context.dataToShow = value;
     const parentContainer = document.querySelector('.list-container');
+
+    const dom = context.getTableForList(context);
+    const listRow = document.querySelector('.list-row');
+    const listRowChildren = document.querySelector('.list-row').children[1];
+    // console.log(listRowChildren);
+    listRowChildren.remove();
+    listRow.appendChild(dom);
+
+    const all = context.dataToShow === 'overall' ? '<span><b>Overall</b></span>' : '<span>Overall</span>';
+    const deaths = context.dataToShow === 'deaths' ? '<span><b>Deaths</b></span>' : '<span>Deaths</span>';
+    const recov = context.dataToShow === 'recov' ? '<span><b>Recoveries</b></span>' : '<span>Recoveries</span>';
+
+    columnFirst.innerHTML = `${all}`;
+    columnSecond.innerHTML = `${deaths}`;
+    columnThird.innerHTML = `${recov}`;
+
+
     return;
   });
 
