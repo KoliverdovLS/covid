@@ -11,18 +11,26 @@ export default function graph(context) {
   container.appendChild(row);
 
   container.addEventListener('mouseenter', (e) => {
-    if (e.fromElement.tagName === 'DIV') {
-      container.appendChild(context.addPopUpMenu());
-      container.appendChild(context.getOverDeathRecovMenu());
-      document.querySelector('.menu-recov-container').classList.replace('menu-recov-container', 'graph-menu-recov-container');
-    };
+    try {
+      if (e.fromElement.tagName === 'DIV') {
+        container.appendChild(context.addPopUpMenu());
+        container.appendChild(context.getOverDeathRecovMenu());
+        document.querySelector('.menu-recov-container').classList.replace('menu-recov-container', 'graph-menu-recov-container');
+      };
+    } catch (error) {
+
+    }
   });
 
   container.addEventListener('mouseleave', (e) => {
-    if (e.target.tagName === 'DIV') {
-      document.querySelectorAll('.menu-container').forEach((i) => i.remove());
-      document.querySelectorAll('.graph-menu-recov-container').forEach((i) => i.remove());
-    };
+    try {
+      if (e.target.tagName === 'DIV') {
+        document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+        document.querySelectorAll('.graph-menu-recov-container').forEach((i) => i.remove());
+      };
+    } catch (error) {
+
+    }
   });
 
   return container;

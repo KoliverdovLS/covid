@@ -8,12 +8,8 @@ export default function getTableList(context) {
   container.className = ('container-fluid p-3 m-0 height-col2 align-self-stretch');
   const columnNameTitle = document.createElement('div');
   const columnCasesTitle = document.createElement('div'); // Overall
-  const columnCasesTitleD = document.createElement('div'); // Deaths
-  const columnCasesTitleR = document.createElement('div'); // Recoveries
   columnNameTitle.className = 'col-3 m-0 p-0 fs-6 fw-bold';
   columnCasesTitle.className = 'col-9 m-0 p-0 ps-1 fs-6 fw-bold text-center';
-  // columnCasesTitleD.className = dataToShow === 'deaths' ? ('col-9 m-0 p-0 ps-1 fs-6 fw-bold') : ('col-3 m-0 p-0 ps-1 fs-6');
-  // columnCasesTitleR.className = dataToShow === 'recov' ? ('col-9 m-0 p-0 ps-1 fs-6 fw-bold') : ('col-3 m-0 p-0 ps-1 fs-6');
 
   columnNameTitle.textContent = 'Country';
   let strTitle = "Overall";
@@ -37,7 +33,8 @@ export default function getTableList(context) {
     console.log(info);
     try {
       context.getFilteredArrayOfCountries()(Countries).map((i) => {
-        const { Country, CountryCode, TotalConfirmed, TotalDeaths, TotalRecovered } = i;
+        const { Country, CountryCode, Premium: { CountryStats: { Population } }, TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = i;
+        console.log(i);
         const row = document.createElement('div');
         row.className = ('row justify-content-center p-0 align-items-center');
         const columnName = document.createElement('div');
@@ -52,7 +49,7 @@ export default function getTableList(context) {
         columnFlag.style.backgroundRepeat = 'no-repeat';
         columnFlag.style.backgroundPosition = 'center';
         columnFlag.style.backgroundSize = 'initial';
-        columnCases.textContent = i[context.getCorrectTypeOfData()];
+        columnCases.textContent = context.getCorrectDataToTheListFunc()(context, i);
         row.appendChild(columnName);
         row.appendChild(columnFlag);
         row.appendChild(columnCases);

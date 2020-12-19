@@ -50,5 +50,5 @@ container.appendChild(rowlow);
 
 document.body.appendChild(container);
 
-console.log(window.outerHeight);
-console.log(window.screen.availHeight);
+// console.log(window.outerHeight);
+// console.log(window.screen.availHeight);
