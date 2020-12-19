@@ -1,6 +1,6 @@
 export default function getCorrectDataToTheList() {
   return (context, Data) => {
-    const { destination, dataToShow, optAllLastDay, optTotalPer100, getPer100Data } = context;
+    const { destination, dataToShow, optAllLastDay, optTotalPer100, getPer100Data, hundredThousand } = context;
     const { Country, CountryCode, Premium: { CountryStats: { Population } }, TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = Data;
     if (dataToShow === 'overall') {
       if (optAllLastDay === 'all') {
@@ -8,7 +8,7 @@ export default function getCorrectDataToTheList() {
           return TotalConfirmed;
         }
         if (optTotalPer100 === 'per') {
-          return (TotalConfirmed / (Population / 100000)).toFixed(2);
+          return (TotalConfirmed / (Population / hundredThousand)).toFixed(2);
         }
       }
       if (optAllLastDay === 'day') {
@@ -16,7 +16,7 @@ export default function getCorrectDataToTheList() {
           return NewConfirmed;
         }
         if (optTotalPer100 === 'per') {
-          return (NewConfirmed / (Population / 100000)).toFixed(2);
+          return (NewConfirmed / (Population / hundredThousand)).toFixed(2);
         }
       }
     }
@@ -26,7 +26,7 @@ export default function getCorrectDataToTheList() {
           return TotalDeaths;
         }
         if (optTotalPer100 === 'per') {
-          return (TotalDeaths / (Population / 100000)).toFixed(2);
+          return (TotalDeaths / (Population / hundredThousand)).toFixed(2);
         }
       }
       if (optAllLastDay === 'day') {
@@ -34,7 +34,7 @@ export default function getCorrectDataToTheList() {
           return NewDeaths;
         }
         if (optTotalPer100 === 'per') {
-          return (NewDeaths / (Population / 100000)).toFixed(2);
+          return (NewDeaths / (Population / hundredThousand)).toFixed(2);
         }
       }
     }
@@ -44,7 +44,7 @@ export default function getCorrectDataToTheList() {
           return TotalRecovered;
         }
         if (optTotalPer100 === 'per') {
-          return (TotalRecovered / (Population / 100000)).toFixed(2);
+          return (TotalRecovered / (Population / hundredThousand)).toFixed(2);
         }
       }
       if (optAllLastDay === 'day') {
@@ -52,7 +52,7 @@ export default function getCorrectDataToTheList() {
           return NewRecovered;
         }
         if (optTotalPer100 === 'per') {
-          return (NewRecovered / (Population / 100000)).toFixed(2);
+          return (NewRecovered / (Population / hundredThousand)).toFixed(2);
         }
       }
     }
