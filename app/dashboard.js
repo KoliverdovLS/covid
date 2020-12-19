@@ -34,6 +34,7 @@ import getPer100 from './service/getPer100';
 import getCorrectDataToTheList from './service/getCorrectDataToTheList';
 const dashBoard = {
   worldPopulation: 7809320722,
+  hundredThousand: 100000,
   table: 'table', // - is not important
   list: 'list', // - is not important
   map: 'map', // - is not important
