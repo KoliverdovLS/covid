@@ -10,47 +10,26 @@ export default function getTableList(context) {
   const columnCasesTitle = document.createElement('div'); // Overall
   const columnCasesTitleD = document.createElement('div'); // Deaths
   const columnCasesTitleR = document.createElement('div'); // Recoveries
-  columnNameTitle.className = ('col-3 m-0 p-0 fs-6 fw-bold');
-  columnCasesTitle.className = dataToShow === 'overall' ? ('col-3 m-0 p-0 ps-1 fs-6 fw-bold') : ('col-3 m-0 p-0 ps-1 fs-6');
-  columnCasesTitleD.className = dataToShow === 'deaths' ? ('col-3 m-0 p-0 ps-1 fs-6 fw-bold') : ('col-3 m-0 p-0 ps-1 fs-6');
-  columnCasesTitleR.className = dataToShow === 'recov' ? ('col-3 m-0 p-0 ps-1 fs-6 fw-bold') : ('col-3 m-0 p-0 ps-1 fs-6');
+  columnNameTitle.className = 'col-3 m-0 p-0 fs-6 fw-bold';
+  columnCasesTitle.className = 'col-9 m-0 p-0 ps-1 fs-6 fw-bold text-center';
+  // columnCasesTitleD.className = dataToShow === 'deaths' ? ('col-9 m-0 p-0 ps-1 fs-6 fw-bold') : ('col-3 m-0 p-0 ps-1 fs-6');
+  // columnCasesTitleR.className = dataToShow === 'recov' ? ('col-9 m-0 p-0 ps-1 fs-6 fw-bold') : ('col-3 m-0 p-0 ps-1 fs-6');
 
   columnNameTitle.textContent = 'Country';
-  columnCasesTitle.textContent = 'Overall';
-  columnCasesTitleD.textContent = 'Deaths';
-  columnCasesTitleR.textContent = 'Recov';
+  let strTitle = "Overall";
+  if (dataToShow === 'deaths') {
+    strTitle = 'Deaths';
+  }
+  if (dataToShow === 'recov') {
+    strTitle = "Recoveries";
+  }
+  columnCasesTitle.textContent = strTitle;
 
   const rowTitle = document.createElement('div');
   rowTitle.className = ('row justify-content-between p-1 align-items-center');
   rowTitle.appendChild(columnNameTitle);
   rowTitle.appendChild(columnCasesTitle);
-  rowTitle.appendChild(columnCasesTitleD);
-  rowTitle.appendChild(columnCasesTitleR);
-  rowTitle.addEventListener('click', (e) => {
-    const text = e.target.textContent.toLowerCase();
-    if (text !== 'overall' && text !== 'deaths' && text !== 'recov') {
-      return;
-    }
-    context.dataToShow = text;
-    const target = e.target;
-    const parent = e.target.parentNode;
-    const children = parent.childNodes;
-    children.forEach((i) => {
-      if (i.textContent === 'Country') {
-        return;
-      }
-      i.classList.remove('fw-bold');
-    });
-    target.classList.add('fw-bold');
 
-    const dom = context.getTableForList(context);
-    const listRow = document.querySelector('.list-row');
-    const listRowChildren = document.querySelector('.list-row').children[1];
-    // console.log(listRowChildren);
-    listRowChildren.remove();
-    listRow.appendChild(dom);
-
-  });
   container.appendChild(rowTitle);
 
   summaryByCountry().then((info) => {
@@ -59,7 +38,6 @@ export default function getTableList(context) {
     try {
       context.getFilteredArrayOfCountries()(Countries).map((i) => {
         const { Country, CountryCode, TotalConfirmed, TotalDeaths, TotalRecovered } = i;
-        // console.log(i);
         const row = document.createElement('div');
         row.className = ('row justify-content-center p-0 align-items-center');
         const columnName = document.createElement('div');
