@@ -12,7 +12,6 @@ export default function menuToShowKeyboard(context) {
   container.style.backgroundPosition = 'center';
   container.style.backgroundSize = 'contain';
   container.addEventListener('click', (e) => {
-    console.log('hi');
     const containerForKeybord = document.querySelector('.list-container');
     containerForKeybord.appendChild(context.getKeyBoard());
 
@@ -20,26 +19,12 @@ export default function menuToShowKeyboard(context) {
       onChange: input => onChange(input),
       onKeyPress: button => onKeyPress(button)
     });
-    console.log(newKeyboard);
-
-    document.querySelector(".input-search").addEventListener("input", event => {
-      newKeyboard.setInput(event.target.value);
-    });
-
     function onChange(input) {
       document.querySelector(".input-search").value = input;
-      console.log("Input changed", input);
-      // ======================================
       context.search = e.target.value;
-      const dom = context.getTableForList(context);
-      const listRow = document.querySelector('.list-row');
-      const listRowChildren = document.querySelector('.list-row').children[1];
-      console.log(listRowChildren);
-      listRowChildren.remove();
-      listRow.appendChild(dom);
-      // ======================================
-    }
-
+      const evt = new Event("input", { "bubbles": false, "cancelable": false });
+      document.querySelector(".input-search").dispatchEvent(evt);
+    };
     function onKeyPress(button) {
       console.log("Button pressed", button);
     }
