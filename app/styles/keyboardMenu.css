@@ -9,3 +9,9 @@
   right: -50px;
   z-index: 1;
 }
+
+@media (max-width: 992px) {
+  .keyboard-menu-container {
+    display: none;
+  }
+}

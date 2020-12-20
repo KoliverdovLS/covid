@@ -14,6 +14,14 @@ rowtitle.className = ('row justify-content-end bg-light');
 const rowtop = document.createElement('div');
 rowtop.className = ('row justify-content-end bg-light');
 
+const rowadaptivemenu = document.createElement('div'); // adptive menu
+rowadaptivemenu.className = ('row row-adaptive-menu justify-content-around bg-light');
+rowadaptivemenu.appendChild(dashBoard.getAdaptiveMenuLastDayTotal());
+
+const rowadaptivemenuSecond = document.createElement('div'); // adptive menu
+rowadaptivemenuSecond.className = ('row row-adaptive-menu-second justify-content-around bg-light');
+rowadaptivemenuSecond.appendChild(dashBoard.getOverDeathRecovMenuAdaptive());
+
 const rowlow = document.createElement('div');
 rowlow.className = ('row justify-content-between bg-light align-items-stretch m-0 p-0 rowHeight');
 
@@ -46,33 +54,9 @@ rowlow.appendChild(columnForGraph);
 
 container.appendChild(rowtitle);
 container.appendChild(rowtop);
+container.appendChild(rowadaptivemenu);
+container.appendChild(rowadaptivemenuSecond);
 container.appendChild(rowlow);
 
 
 document.body.appendChild(container);
-
-// console.log(window.outerHeight);
-// console.log(window.screen.availHeight);
-
-// function d() {
-//   // return (getByCountryTotalAllStatus('belgium', 'confirmed', new Date('2020-03-01T00:00:00Z'), new Date('2020-11-01T00:00:00Z')));
-//   // return getByCountryTotalAllStatus('belgium');
-//   // return 'fff';
-//   const ar = [];
-//   getCountries().then((data) => {
-//     let index = 0;
-//     const array = data.map(({ Slug }) => Slug);
-//     const key = setInterval(() => {
-//       ar.push(getDayOneAllStatus(array[index]));
-//       index += 1;
-//       console.log(ar);
-//       if (index === 50) {
-//         window.clearInterval(key);
-//       }
-//     }, 600);
-//   });
-//   Promise.all(ar).then((ii) => {
-//     console.log(ii);
-//   });
-// }
-// d();
