@@ -13,10 +13,10 @@ export default function table(context) {
     const columnDeath = document.createElement('div');
     const columnRecov = document.createElement('div');
     row.className = ('row justify-content-between align-items-center p-0 bg-info');
-    columnDest.className = ('col h3 align-items-center bg-success border p-0 m-0 align-self-stretch');
-    columnCases.className = ('col h3 bg-success border min-h-100 p-0 m-0 align-self-stretch');
-    columnDeath.className = ('col h3 bg-success border p-0 m-0 align-self-stretch');
-    columnRecov.className = ('col h3 bg-success border p-0 m-0 align-self-stretch');
+    columnDest.className = ('col-sm-12 col-md-3 h3 align-items-center bg-success border p-0 m-0 align-self-stretch');
+    columnCases.className = ('col-sm-12 col-md-3 h3 bg-success border min-h-100 p-0 m-0 align-self-stretch');
+    columnDeath.className = ('col-sm-12 col-md-3 h3 bg-success border p-0 m-0 align-self-stretch');
+    columnRecov.className = ('col-sm-12 col-md-3 h3 bg-success border p-0 m-0 align-self-stretch');
 
     const columnDestTop = document.createElement('div');
     const columnDestLow = document.createElement('div');
