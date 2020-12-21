@@ -1,12 +1,13 @@
-.menu-container {
+.menu-adaptive-container {
   position:absolute;
+  display: none;
   height: 30px;
   background-color: rgba(178, 34, 34, 0.481);
   border: 1px solid firebrick;
-  display: flex;
-  top: -30px;
+  /* display: flex; */
+  top: 0;
   left: 0;
-  border-radius: 15px 15px 0 0;
+  /* border-radius: 15px 15px 0 0; */
 }
 
 .first-column, .second-column, .third-column {
@@ -14,7 +15,11 @@
 }
 
 @media (max-width: 992px) {
-  .menu-container {
-    display: none;
+  .menu-adaptive-container {
+    display: flex;
+    position: relative;
   }
 }
+
+
+/* getAdaptiveMenuLastDayTotal */

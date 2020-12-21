@@ -63,9 +63,19 @@
   left: 100%;
   z-index: 3;
 }
+.row-adaptive-menu, .row-adaptive-menu-second {
+  display: none;
+}
 
 @media (max-width: 992px) {
   .the-most-container {
     overflow-y: scroll!important;
+  }
+  .row-adaptive-menu-second {
+    border: 1px solid hotpink;
+  }
+
+  .row-adaptive-menu, .row-adaptive-menu-second {
+    display: flex;
   }
 }

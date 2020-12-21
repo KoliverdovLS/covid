@@ -32,6 +32,9 @@ import menuToShowKeyboard from './components/keyboardMenu';
 import overDeathRecovMenu from './components/overDeathRecovMenu';
 import getPer100 from './service/getPer100';
 import getCorrectDataToTheList from './service/getCorrectDataToTheList';
+import showAdaptiveMenuLastDayTotal from './components/menuAdaptive';
+import overDeathRecovMenuAdaptive from './components/overDeathRecovMenuAdaptive';
+
 const dashBoard = {
   worldPopulation: 7809320722,
   hundredThousand: 100000,
@@ -45,8 +48,17 @@ const dashBoard = {
   optAllLastDay: 'all', // 'all', 'day' - to show all data or last day data
   optTotalPer100: 'total', // 'total', 'per' - to show total cases or pre 100 k population data
 
+
+  getAdaptiveMenuLastDayTotal() {
+    return showAdaptiveMenuLastDayTotal(this);
+  },
+
   changeFilterOptions() {
     return changeFilterOption(this);
+  },
+
+  getOverDeathRecovMenuAdaptive() {
+    return overDeathRecovMenuAdaptive(this);
   },
 
   getCorrectDataToTheListFunc() {
