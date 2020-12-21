@@ -28,6 +28,16 @@ export default function showPopUpMenu(context) {
 
   container.addEventListener('click', (e) => {
     const value = e.target.textContent;
+    if (value.toLowerCase() === 'enlarge') {
+      const classname = e.target.parentNode.parentNode.parentNode.className;
+      const target = (RegExp(`^([a-z]*)-container.*`).exec(classname)[1]);
+      // console.log(target);
+      context.enlarge = target;
+      context.makeEnlarge();
+      // console.log(rowcontainer);
+
+      return;
+    }
     context.changeFilterOptions()(value);
     const parentContainer = document.querySelector('.list-container');
     const newAll = context.optAllLastDay === 'all' ? '<span><b>All</b></span>' : '<span>All</span>';

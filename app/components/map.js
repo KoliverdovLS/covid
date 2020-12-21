@@ -15,12 +15,12 @@ export default function map(context) {
     version: "weekly",
     // callback: 'initMap',
   });
-  loader.load().then(() => {
-    map = new google.maps.Map(document.querySelector('.gmap'), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8,
-    });
-  });
+  // loader.load().then(() => {
+  //   map = new google.maps.Map(document.querySelector('.gmap'), {
+  //     center: { lat: -34.397, lng: 150.644 },
+  //     zoom: 8,
+  //   });
+  // });
 
   container.addEventListener('mouseenter', (e) => {
     if (e.fromElement.tagName === 'DIV') {
