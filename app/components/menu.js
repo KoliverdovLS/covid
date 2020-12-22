@@ -1,6 +1,7 @@
 import '../styles/menu.css';
 import { changeTableOnCountry } from '../service/changeTable';
 import updateGraph from '../service/updateGraphics';
+import expand from '../assets/expand.svg';
 
 export default function showPopUpMenu(context) {
   const container = document.createElement('div');
@@ -10,7 +11,7 @@ export default function showPopUpMenu(context) {
   const columnSecond = document.createElement('div');
   const columnThird = document.createElement('div');
 
-  columnFirst.className = 'first-column m-0 p-0 col-2 fs-6';
+  columnFirst.className = 'first-column-icon first-column m-0 p-0 col-2 fs-6';
   columnSecond.className = 'second-column m-0 p-0 col-5 fs-6';
   columnThird.className = 'third-column m-0 p-0 col-5 fs-6';
 
@@ -23,20 +24,22 @@ export default function showPopUpMenu(context) {
   columnSecond.innerHTML = `${all} | ${day}`;
   columnThird.innerHTML = `${total} | ${per100}`;
 
+  columnFirst.style.backgroundImage = `url(${expand})`;
+  columnFirst.style.backgroundRepeat = 'no-repeat';
+  columnFirst.style.backgroundPosition = 'center';
+  columnFirst.style.backgroundSize = 'contain';
+
   container.appendChild(columnFirst);
   container.appendChild(columnSecond);
   container.appendChild(columnThird);
 
   container.addEventListener('click', (e) => {
     const value = e.target.textContent;
-    if (value.toLowerCase() === 'enlarge') {
-      const classname = e.target.parentNode.parentNode.parentNode.className;
+    if (e.target.children[0] && e.target.children[0].textContent.toLowerCase() === 'enlarge') {
+      const classname = e.target.parentNode.parentNode.className;
       const target = (RegExp(`^([a-z]*)-container.*`).exec(classname)[1]);
-      // console.log(target);
       context.enlarge = target;
       context.makeEnlarge();
-      // console.log(rowcontainer);
-
       return;
     }
     context.changeFilterOptions()(value);
