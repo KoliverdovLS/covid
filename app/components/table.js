@@ -19,26 +19,26 @@ export default function table(context) {
 
   const columnDestTop = document.createElement('div');
   const columnDestLow = document.createElement('div');
-  columnDestTop.className = ('table-where col-6 col-md-12 h3 bg-transparent p-1 m-0');
-  columnDestLow.className = ('table-date col-6 col-md-12 h3 bg-transparent p-1 m-0');
+  columnDestTop.className = ('table-where col-6 col-md-12 h3 bg-transparent p-0 m-0');
+  columnDestLow.className = ('table-date col-6 col-md-12 h3 bg-transparent p-0 m-0');
 
   columnDestTop.textContent = 'In the world';
   columnDestLow.textContent = 'Date';
 
   const columnCasesTop = document.createElement('div');
   const columnCasesLow = document.createElement('div');
-  columnCasesTop.className = ('col-6 h3 col-md-12 bg-transparent p-1 m-0');
-  columnCasesLow.className = ('col-6 table-case col-md-12 h3 bg-transparent p-1 m-0');
+  columnCasesTop.className = ('col-6 h3 col-md-12 bg-transparent p-0 m-0');
+  columnCasesLow.className = ('col-6 table-case col-md-12 h3 bg-transparent p-0 m-0');
 
   const columnDeathTop = document.createElement('div');
   const columnDeathLow = document.createElement('div');
-  columnDeathTop.className = ('col-6 h3 col-md-12 bg-transparent p-1 m-0');
-  columnDeathLow.className = ('col-6 table-death col-md-12 h3 bg-transparent p-1 m-0');
+  columnDeathTop.className = ('col-6 h3 col-md-12 bg-transparent p-0 m-0');
+  columnDeathLow.className = ('col-6 table-death col-md-12 h3 bg-transparent p-0 m-0');
 
   const columnRecovTop = document.createElement('div');
   const columnRecovLow = document.createElement('div');
-  columnRecovTop.className = ('col-6 h3 col-md-12 bg-transparent p-1 m-0');
-  columnRecovLow.className = ('col-6 table-recov col-md-12 h3 bg-transparent p-1 m-0');
+  columnRecovTop.className = ('col-6 h3 col-md-12 bg-transparent p-0 m-0');
+  columnRecovLow.className = ('col-6 table-recov col-md-12 h3 bg-transparent p-0 m-0');
 
   columnDest.appendChild(columnDestTop);
   columnDest.appendChild(columnDestLow);
