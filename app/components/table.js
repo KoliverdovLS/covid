@@ -5,67 +5,84 @@ export default function table(context) {
   const { destination } = context;
   const container = document.createElement('div');
   container.className = ('table-container container-fluid bg-dark p-0');
-  summaryByCountry().then((data) => {
-    const { Date, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } } = data;
-    const row = document.createElement('div');
-    const columnDest = document.createElement('div');
-    const columnCases = document.createElement('div');
-    const columnDeath = document.createElement('div');
-    const columnRecov = document.createElement('div');
-    row.className = ('row justify-content-between align-items-center p-0 bg-info');
-    columnDest.className = ('wrap-col col-12 col-md-3 h3 align-items-center bg-success border p-0 m-0 align-self-stretch');
-    columnCases.className = ('wrap-col col-12 col-md-3 h3 bg-success border min-h-100 p-0 m-0 align-self-stretch');
-    columnDeath.className = ('wrap-col col-12 col-md-3 h3 bg-success border p-0 m-0 align-self-stretch');
-    columnRecov.className = ('wrap-col col-12 col-md-3 h3 bg-success border p-0 m-0 align-self-stretch');
+  const row = document.createElement('div');
+  const columnDest = document.createElement('div');
+  const columnCases = document.createElement('div');
+  const columnDeath = document.createElement('div');
+  const columnRecov = document.createElement('div');
+  row.className = ('row justify-content-between align-items-center p-0 bg-info');
+  columnDest.className = ('wrap-col col-12 col-md-3 h3 align-items-center bg-success border p-0 m-0 align-self-stretch');
+  columnCases.className = ('wrap-col col-12 col-md-3 h3 bg-success border min-h-100 p-0 m-0 align-self-stretch');
+  columnDeath.className = ('wrap-col col-12 col-md-3 h3 bg-success border p-0 m-0 align-self-stretch');
+  columnRecov.className = ('wrap-col col-12 col-md-3 h3 bg-success border p-0 m-0 align-self-stretch');
 
-    const columnDestTop = document.createElement('div');
-    const columnDestLow = document.createElement('div');
-    columnDestTop.className = ('table-where col-6 col-md-12 h3 bg-transparent p-3 m-0');
-    columnDestLow.className = ('table-date col-6 col-md-12 h3 bg-transparent p-3 m-0');
+  const columnDestTop = document.createElement('div');
+  const columnDestLow = document.createElement('div');
+  columnDestTop.className = ('table-where col-6 col-md-12 h3 bg-transparent p-3 m-0');
+  columnDestLow.className = ('table-date col-6 col-md-12 h3 bg-transparent p-3 m-0');
 
-    columnDestTop.textContent = 'In the world';
-    columnDestLow.textContent = Date.toLocaleString();
+  columnDestTop.textContent = 'In the world';
+  columnDestLow.textContent = Date.now().toLocaleString();
 
-    const columnCasesTop = document.createElement('div');
-    const columnCasesLow = document.createElement('div');
-    columnCasesTop.className = ('col-6 h3 col-md-12 bg-transparent p-3 m-0');
-    columnCasesLow.className = ('col-6 table-case col-md-12 h3 bg-transparent p-3 m-0');
+  const columnCasesTop = document.createElement('div');
+  const columnCasesLow = document.createElement('div');
+  columnCasesTop.className = ('col-6 h3 col-md-12 bg-transparent p-3 m-0');
+  columnCasesLow.className = ('col-6 table-case col-md-12 h3 bg-transparent p-3 m-0');
 
-    const columnDeathTop = document.createElement('div');
-    const columnDeathLow = document.createElement('div');
-    columnDeathTop.className = ('col-6 h3 col-md-12 bg-transparent p-3 m-0');
-    columnDeathLow.className = ('col-6 table-death col-md-12 h3 bg-transparent p-3 m-0');
+  const columnDeathTop = document.createElement('div');
+  const columnDeathLow = document.createElement('div');
+  columnDeathTop.className = ('col-6 h3 col-md-12 bg-transparent p-3 m-0');
+  columnDeathLow.className = ('col-6 table-death col-md-12 h3 bg-transparent p-3 m-0');
 
-    const columnRecovTop = document.createElement('div');
-    const columnRecovLow = document.createElement('div');
-    columnRecovTop.className = ('col-6 h3 col-md-12 bg-transparent p-3 m-0');
-    columnRecovLow.className = ('col-6 table-recov col-md-12 h3 bg-transparent p-3 m-0');
+  const columnRecovTop = document.createElement('div');
+  const columnRecovLow = document.createElement('div');
+  columnRecovTop.className = ('col-6 h3 col-md-12 bg-transparent p-3 m-0');
+  columnRecovLow.className = ('col-6 table-recov col-md-12 h3 bg-transparent p-3 m-0');
 
-    columnDest.appendChild(columnDestTop);
-    columnDest.appendChild(columnDestLow);
-    columnCases.appendChild(columnCasesTop);
-    columnCases.appendChild(columnCasesLow);
+  columnDest.appendChild(columnDestTop);
+  columnDest.appendChild(columnDestLow);
+  columnCases.appendChild(columnCasesTop);
+  columnCases.appendChild(columnCasesLow);
 
-    columnDeath.appendChild(columnDeathTop);
-    columnDeath.appendChild(columnDeathLow);
-    columnRecov.appendChild(columnRecovTop);
-    columnRecov.appendChild(columnRecovLow);
+  columnDeath.appendChild(columnDeathTop);
+  columnDeath.appendChild(columnDeathLow);
+  columnRecov.appendChild(columnRecovTop);
+  columnRecov.appendChild(columnRecovLow);
 
-    columnCasesTop.textContent = 'Overall';
-    columnCasesLow.textContent = TotalConfirmed;
+  columnCasesTop.textContent = 'Overall';
+  columnCasesLow.textContent = 'TotalConfirmed';
 
-    columnDeathTop.textContent = 'Deaths';
-    columnDeathLow.textContent = TotalDeaths;
+  columnDeathTop.textContent = 'Deaths';
+  columnDeathLow.textContent = 'TotalDeaths';
 
-    columnRecovTop.textContent = 'Recoveries';
-    columnRecovLow.textContent = TotalRecovered;
+  columnRecovTop.textContent = 'Recoveries';
+  columnRecovLow.textContent = 'TotalRecovered';
 
-    container.appendChild(row);
-    row.appendChild(columnDest);
-    row.appendChild(columnCases);
-    row.appendChild(columnDeath);
-    row.appendChild(columnRecov);
-  })
+  container.appendChild(row);
+  row.appendChild(columnDest);
+  row.appendChild(columnCases);
+  row.appendChild(columnDeath);
+  row.appendChild(columnRecov);
+  try {
+    summaryByCountry().then((data) => {
+      const { Message, Date, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } } = data;
+      columnDestLow.textContent = Date.toLocaleString();
+      columnCasesLow.textContent = TotalConfirmed;
+      columnDeathLow.textContent = TotalDeaths;
+      columnRecovLow.textContent = TotalRecovered;
+      console.log(Message);
+    })
+  } catch (error) {
+    columnCasesLow.classList.add('pos-relative');
+    columnDeathLow.classList.add('pos-relative');
+    columnRecovLow.classList.add('pos-relative');
+    columnDestLow.classList.add('pos-relative');
+
+    columnDestLow.appendChild(context.getOnLoadingScreen());
+    columnCasesLow.appendChild(context.getOnLoadingScreen());
+    columnDeathLow.appendChild(context.getOnLoadingScreen());
+    columnRecovLow.appendChild(context.getOnLoadingScreen());
+  }
 
   container.addEventListener('mouseenter', (e) => {
     if (document.querySelector('.menu-container') || document.querySelector('.keyboard-menu-container')) {

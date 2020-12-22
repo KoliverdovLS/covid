@@ -1,0 +1,19 @@
+.onLoad-cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(148, 130, 130, 0.8);
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.spinner-border {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.pos-relative {
+  position: relative;
+}

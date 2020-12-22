@@ -29,10 +29,10 @@ export default function getTableList(context) {
 
   container.appendChild(rowTitle);
 
-  summaryByCountry().then((info) => {
-    const { Countries } = info;
-    // console.log(info);
-    try {
+  try {
+    summaryByCountry().then((info) => {
+      // console.log(info);
+      const { Countries } = info;
       context.getFilteredArrayOfCountries()(Countries).map((i) => {
         const { Country, CountryCode, Slug, Premium: { CountryStats: { Population } }, TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = i;
         // console.log(i);
@@ -75,10 +75,11 @@ export default function getTableList(context) {
           changeTableOnCountry(context, e);
         })
       });
-    } catch (e) {
-      console.log(e);
-    }
-  });
+    });
+  } catch (e) {
+    container.classList.add('pos-relative');
+    container.appendChild(context.getOnLoadingScreen());
+  }
 
   return container;
 }

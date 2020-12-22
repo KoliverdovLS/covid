@@ -36,6 +36,7 @@ import showAdaptiveMenuLastDayTotal from './components/menuAdaptive';
 import overDeathRecovMenuAdaptive from './components/overDeathRecovMenuAdaptive';
 import { enlarge, doSmall } from './service/enlarge';
 import makeSmallBtn from './components/makeSmallBtn';
+import onLoading from './components/onLoading';
 
 const dashBoard = {
   worldPopulation: 7809320722,
@@ -50,6 +51,10 @@ const dashBoard = {
   optAllLastDay: 'all', // 'all', 'day' - to show all data or last day data
   optTotalPer100: 'total', // 'total', 'per' - to show total cases or pre 100 k population data
   enlarge: false, // 'map', 'list', 'graph', 'false' indicates if btn 'enlarge' clicked. If 'false' - view in standard
+
+  getOnLoadingScreen() {
+    return onLoading(this);
+  },
 
   getAdaptiveMenuLastDayTotal() {
     return showAdaptiveMenuLastDayTotal(this);
