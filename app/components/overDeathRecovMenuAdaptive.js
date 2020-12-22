@@ -1,4 +1,5 @@
 import '../styles/overDeathRecovMenuAdaptive.css';
+import updateMarker from '../components/getMarkerForMap';
 
 export default function overDeathRecovMenuAdaptive(context) {
   const container = document.createElement('div');
@@ -47,7 +48,7 @@ export default function overDeathRecovMenuAdaptive(context) {
     columnFirst.innerHTML = `${all}`;
     columnSecond.innerHTML = `${deaths}`;
     columnThird.innerHTML = `${recov}`;
-
+    updateMarker(context);
 
     return;
   });

@@ -1,6 +1,7 @@
 import '../styles/menu.css';
 import { changeTableOnCountry } from '../service/changeTable';
 import updateGraph from '../service/updateGraphics';
+import updateMarker from '../components/getMarkerForMap';
 import expand from '../assets/expand.svg';
 
 export default function showPopUpMenu(context) {
@@ -53,6 +54,7 @@ export default function showPopUpMenu(context) {
     const newPer100 = context.optTotalPer100 === 'total' ? '<span>per 100 k</span>' : '<span><b>per 100 k</b></span>';
     columnSecond.innerHTML = `${newAll} | ${newDay}`;
     columnThird.innerHTML = `${newTotal} | ${newPer100}`;
+    updateMarker(context);
     changeTableOnCountry(context, e);
     updateGraph(context);
 
