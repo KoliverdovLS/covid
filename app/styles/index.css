@@ -79,9 +79,9 @@
   .the-most-container {
     overflow-y: scroll!important;
   }
-  .row-adaptive-menu-second {
+  /* .row-adaptive-menu-second {
     border: 1px solid hotpink;
-  }
+  } */
 
   .row-adaptive-menu, .row-adaptive-menu-second {
     display: flex;
