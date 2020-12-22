@@ -3,6 +3,7 @@ import '../styles/table.css';
 
 export default function table(context) {
   const { destination } = context;
+  const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
   const container = document.createElement('div');
   container.className = ('table-container container-fluid bg-dark p-0');
   const row = document.createElement('div');
@@ -22,7 +23,7 @@ export default function table(context) {
   columnDestLow.className = ('table-date col-6 col-md-12 h3 bg-transparent p-3 m-0');
 
   columnDestTop.textContent = 'In the world';
-  columnDestLow.textContent = Date.now().toLocaleString();
+  columnDestLow.textContent = 'Date';
 
   const columnCasesTop = document.createElement('div');
   const columnCasesLow = document.createElement('div');
@@ -63,29 +64,29 @@ export default function table(context) {
   row.appendChild(columnCases);
   row.appendChild(columnDeath);
   row.appendChild(columnRecov);
-  try {
-    summaryByCountry().then((data) => {
-      const { Message, Date, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } } = data;
-      columnDestLow.textContent = Date.toLocaleString();
+  summaryByCountry().then((data) => {
+    const { Message, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } } = data;
+    const time = data.Date;
+    if (Message === 'Caching in progress' || !data) {
+      columnCasesLow.classList.add('pos-relative');
+      columnDeathLow.classList.add('pos-relative');
+      columnRecovLow.classList.add('pos-relative');
+      columnDestLow.classList.add('pos-relative');
+
+      columnDestLow.appendChild(context.getOnLoadingScreen());
+      columnCasesLow.appendChild(context.getOnLoadingScreen());
+      columnDeathLow.appendChild(context.getOnLoadingScreen());
+      columnRecovLow.appendChild(context.getOnLoadingScreen());
+      return;
+    } else {
+      columnDestLow.textContent = new Date(time).toLocaleString('en-US', options);
       columnCasesLow.textContent = TotalConfirmed;
       columnDeathLow.textContent = TotalDeaths;
       columnRecovLow.textContent = TotalRecovered;
-      console.log(Message);
-      if (Message === 'Caching in progress') {
-        throw new Error('Caching in progress');
-      }
-    })
-  } catch (error) {
-    columnCasesLow.classList.add('pos-relative');
-    columnDeathLow.classList.add('pos-relative');
-    columnRecovLow.classList.add('pos-relative');
-    columnDestLow.classList.add('pos-relative');
+    }
+  })
 
-    columnDestLow.appendChild(context.getOnLoadingScreen());
-    columnCasesLow.appendChild(context.getOnLoadingScreen());
-    columnDeathLow.appendChild(context.getOnLoadingScreen());
-    columnRecovLow.appendChild(context.getOnLoadingScreen());
-  }
+
 
   container.addEventListener('mouseenter', (e) => {
     if (document.querySelector('.menu-container') || document.querySelector('.keyboard-menu-container')) {
