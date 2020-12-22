@@ -6,6 +6,7 @@ export default function map(context) {
   container.appendChild(row);
   container.id = 'mapId';
 
+
   container.addEventListener('mouseenter', (e) => {
     if (e.fromElement.tagName === 'DIV') {
       container.appendChild(context.addPopUpMenu());

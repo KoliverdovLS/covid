@@ -1,17 +1,16 @@
-import '../styles/overDeathRecovMenu.css';
-import updateGraph from '../service/updateGraphics';
+import '../styles/overDeathRecovMenuAdaptive.css';
 
-export default function overDeathRecovMenu(context) {
+export default function overDeathRecovMenuAdaptive(context) {
   const container = document.createElement('div');
-  container.className = ('menu-recov-container p-0 justify-content-around align-items-center');
+  container.className = ('menu-recov-adaptive-container container-fluid p-0 justify-content-between align-items-center'); //
 
   const columnFirst = document.createElement('div');
   const columnSecond = document.createElement('div');
   const columnThird = document.createElement('div');
 
-  columnFirst.className = 'rotate first-column m-0 p-0 col-2 fs-6';
-  columnSecond.className = 'rotate second-column m-0 p-0 col-5 fs-6';
-  columnThird.className = 'rotate third-column m-0 p-0 col-5 fs-6';
+  columnFirst.className = 'first-column m-0 p-0 col-4 fs-6';
+  columnSecond.className = 'second-column m-0 p-0 col-4 fs-6';
+  columnThird.className = 'third-column m-0 p-0 col-4 fs-6';
 
   const all = context.dataToShow === 'overall' ? '<span><b>Overall</b></span>' : '<span>Overall</span>';
   const deaths = context.dataToShow === 'deaths' ? '<span><b>Deaths</b></span>' : '<span>Deaths</span>';
@@ -44,7 +43,6 @@ export default function overDeathRecovMenu(context) {
     const all = context.dataToShow === 'overall' ? '<span><b>Overall</b></span>' : '<span>Overall</span>';
     const deaths = context.dataToShow === 'deaths' ? '<span><b>Deaths</b></span>' : '<span>Deaths</span>';
     const recov = context.dataToShow === 'recov' ? '<span><b>Recoveries</b></span>' : '<span>Recoveries</span>';
-    updateGraph(context);
 
     columnFirst.innerHTML = `${all}`;
     columnSecond.innerHTML = `${deaths}`;
