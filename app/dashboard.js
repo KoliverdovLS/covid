@@ -32,6 +32,11 @@ import menuToShowKeyboard from './components/keyboardMenu';
 import overDeathRecovMenu from './components/overDeathRecovMenu';
 import getPer100 from './service/getPer100';
 import getCorrectDataToTheList from './service/getCorrectDataToTheList';
+import showAdaptiveMenuLastDayTotal from './components/menuAdaptive';
+import overDeathRecovMenuAdaptive from './components/overDeathRecovMenuAdaptive';
+import { enlarge, doSmall } from './service/enlarge';
+import makeSmallBtn from './components/makeSmallBtn';
+
 const dashBoard = {
   worldPopulation: 7809320722,
   hundredThousand: 100000,
@@ -44,9 +49,30 @@ const dashBoard = {
   dataToShow: 'overall', // 'overall', 'deaths', 'recov' - to show what kind of data
   optAllLastDay: 'all', // 'all', 'day' - to show all data or last day data
   optTotalPer100: 'total', // 'total', 'per' - to show total cases or pre 100 k population data
+  enlarge: false, // 'map', 'list', 'graph', 'false' indicates if btn 'enlarge' clicked. If 'false' - view in standard
+
+  getAdaptiveMenuLastDayTotal() {
+    return showAdaptiveMenuLastDayTotal(this);
+  },
+
+  makeSmallButton() {
+    return makeSmallBtn(this);
+  },
+
+  makeSmall() {
+    return doSmall(this);
+  },
+
+  makeEnlarge() {
+    return enlarge(this);
+  },
 
   changeFilterOptions() {
     return changeFilterOption(this);
+  },
+
+  getOverDeathRecovMenuAdaptive() {
+    return overDeathRecovMenuAdaptive(this);
   },
 
   getCorrectDataToTheListFunc() {
@@ -119,15 +145,11 @@ const dashBoard = {
 
 }
 
+
 export { dashBoard };
 
 
 
-// function dashBoard() {
-  // return (getByCountryTotalAllStatus('belgium', 'confirmed', new Date('2020-03-01T00:00:00Z'), new Date('2020-11-01T00:00:00Z')));
-  // return getByCountryTotalAllStatus('belgium');
-//   return 'fff';
-// }
 // belgium
 // confirmed
 // export { dashBoard };

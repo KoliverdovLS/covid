@@ -1,44 +1,33 @@
-import '../styles/menu.css';
+import '../styles/menu-adaptive.css'; //
 import { changeTableOnCountry } from '../service/changeTable';
-import updateGraph from '../service/updateGraphics';
 
-export default function showPopUpMenu(context) {
+export default function showAdaptiveMenuLastDayTotal(context) {
   const container = document.createElement('div');
-  container.className = ('menu-container container-fluid p-0 justify-content-between align-items-center');
+  container.className = ('menu-adaptive-container container-fluid p-0 justify-content-between align-items-center'); //
 
-  const columnFirst = document.createElement('div');
+  // const columnFirst = document.createElement('div');
   const columnSecond = document.createElement('div');
   const columnThird = document.createElement('div');
 
-  columnFirst.className = 'first-column m-0 p-0 col-2 fs-6';
-  columnSecond.className = 'second-column m-0 p-0 col-5 fs-6';
-  columnThird.className = 'third-column m-0 p-0 col-5 fs-6';
+  // columnFirst.className = 'first-column m-0 p-0 col-2 fs-6';
+  columnSecond.className = 'second-column m-0 p-0 col-6 fs-6';
+  columnThird.className = 'third-column m-0 p-0 col-6 fs-6';
 
   const all = context.optAllLastDay === 'all' ? '<span><b>All</b></span>' : '<span>All</span>';
   const day = context.optAllLastDay === 'all' ? '<span>Last day</span>' : '<span><b>Last day</b></span>';
   const total = context.optTotalPer100 === 'total' ? '<span><b>Total</b></span>' : '<span>Total</span>';
   const per100 = context.optTotalPer100 === 'total' ? '<span>per 100 k</span>' : '<span><b>per 100 k</b></span>';
 
-  columnFirst.innerHTML = '<span>Enlarge</span>';
+  // columnFirst.innerHTML = '<span>Enlarge</span>';
   columnSecond.innerHTML = `${all} | ${day}`;
   columnThird.innerHTML = `${total} | ${per100}`;
 
-  container.appendChild(columnFirst);
+  // container.appendChild(columnFirst);
   container.appendChild(columnSecond);
   container.appendChild(columnThird);
 
   container.addEventListener('click', (e) => {
     const value = e.target.textContent;
-    if (value.toLowerCase() === 'enlarge') {
-      const classname = e.target.parentNode.parentNode.parentNode.className;
-      const target = (RegExp(`^([a-z]*)-container.*`).exec(classname)[1]);
-      // console.log(target);
-      context.enlarge = target;
-      context.makeEnlarge();
-      // console.log(rowcontainer);
-
-      return;
-    }
     context.changeFilterOptions()(value);
     const parentContainer = document.querySelector('.list-container');
     const newAll = context.optAllLastDay === 'all' ? '<span><b>All</b></span>' : '<span>All</span>';
@@ -48,7 +37,6 @@ export default function showPopUpMenu(context) {
     columnSecond.innerHTML = `${newAll} | ${newDay}`;
     columnThird.innerHTML = `${newTotal} | ${newPer100}`;
     changeTableOnCountry(context, e);
-    updateGraph(context);
 
     const dom = context.getTableForList(context);
     const listRow = document.querySelector('.list-row');
