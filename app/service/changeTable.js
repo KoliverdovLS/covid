@@ -4,11 +4,11 @@ function changeTableOnCountry(context, event) {
   const { destination, optAllLastDay, optTotalPer100, getPer100Data, worldPopulation } = context;
   // console.log(context);
   summaryByCountry().then((data) => {
-    const { Date, Countries } = data;
+    const { Countries } = data;
     const time = data.Date;
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
     if (!destination) {
       const { Global: { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } } = data;
-      const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
       const date = document.querySelector('.table-date');
       const cases = document.querySelector('.table-case');
       const deaths = document.querySelector('.table-death');
