@@ -11,9 +11,9 @@ export default function showPopUpMenu(context) {
   const columnSecond = document.createElement('div');
   const columnThird = document.createElement('div');
 
-  columnFirst.className = 'first-column-icon first-column m-0 p-0 col-2 fs-6';
+  columnFirst.className = 'first-column-icon first-column m-0 p-0 col-1 fs-6';
   columnSecond.className = 'second-column m-0 p-0 col-5 fs-6';
-  columnThird.className = 'third-column m-0 p-0 col-5 fs-6';
+  columnThird.className = 'third-column m-0 p-0 col-6 fs-6';
 
   const all = context.optAllLastDay === 'all' ? '<span><b>All</b></span>' : '<span>All</span>';
   const day = context.optAllLastDay === 'all' ? '<span>Last day</span>' : '<span><b>Last day</b></span>';
