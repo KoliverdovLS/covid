@@ -11,7 +11,7 @@ export default function showPopUpMenu(context) {
   const columnSecond = document.createElement('div');
   const columnThird = document.createElement('div');
 
-  columnFirst.className = 'first-column-icon first-column m-0 p-0 col-1 fs-6';
+  columnFirst.className = 'first-column-icon first-column m-0 p-0 col-1';
   columnSecond.className = 'second-column m-0 p-0 col-5 fs-6';
   columnThird.className = 'third-column m-0 p-0 col-6 fs-6';
 
@@ -27,7 +27,7 @@ export default function showPopUpMenu(context) {
   columnFirst.style.backgroundImage = `url(${expand})`;
   columnFirst.style.backgroundRepeat = 'no-repeat';
   columnFirst.style.backgroundPosition = 'center';
-  columnFirst.style.backgroundSize = 'contain';
+  columnFirst.style.backgroundSize = 'auto';
 
   container.appendChild(columnFirst);
   container.appendChild(columnSecond);
