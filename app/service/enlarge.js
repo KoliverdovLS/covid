@@ -34,13 +34,13 @@ export function doSmall(context) {
   container.innerHTML = '';
 
   const columnForGraph = document.createElement('div');
-  columnForGraph.className = ('rowlowgraph p-0 col-sm-12 col-lg-4 bg-light border');
+  columnForGraph.className = ('rowlowgraph p-0 col-sm-12 col-lg-4   border');
 
   const columnForMap = document.createElement('div');
-  columnForMap.className = ('rowlowmap p-0 col-sm-12 col-lg-5 bg-light border');
+  columnForMap.className = ('rowlowmap p-0 col-sm-12 col-lg-5   border');
 
   const columnForList = document.createElement('div');
-  columnForList.className = ('rowlowlist p-0 m-0 col-sm-12 col-lg-3 h3 bg-light border');
+  columnForList.className = ('rowlowlist p-0 m-0 col-sm-12 col-lg-3 h3   border');
 
   columnForGraph.appendChild(context.getGraph());
   columnForList.appendChild(context.getList());
