@@ -18,16 +18,16 @@
 }
 
 .height-col2 {
-  height: 55vh;
-  min-height:55vh;
-  max-height: 55vh;
+  height: 61vh;
+  min-height:61vh;
+  max-height: 61vh;
   overflow-y: scroll;
 }
 
 .rowHeight {
-  height: 53vh;
-  min-height:53vh;
-  max-height: 53vh;
+  height: 77vh;
+  min-height:77vh;
+  max-height: 77vh;
   /* height:fit-content; */
 }
 .title-font {
@@ -37,6 +37,11 @@
 
 .list-container {
   position: relative;
+  height: 77vh;
+}
+
+.list-row {
+  height: 60vh;
 }
 
 .redb {
