@@ -1,6 +1,7 @@
 import '../styles/index.css';
 import { getCountries, summaryByCountry } from './getData';
 import { changeTableOnCountry } from './changeTable';
+import updateGraph from './updateGraphics';
 
 export default function getTableList(context) {
   const { dataToShow } = context;
@@ -33,7 +34,7 @@ export default function getTableList(context) {
     // console.log(info);
     try {
       context.getFilteredArrayOfCountries()(Countries).map((i) => {
-        const { Country, CountryCode, Premium: { CountryStats: { Population } }, TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = i;
+        const { Country, CountryCode, Slug, Premium: { CountryStats: { Population } }, TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = i;
         // console.log(i);
         const row = document.createElement('div');
         row.className = ('row justify-content-center p-0 align-items-center');
@@ -67,7 +68,9 @@ export default function getTableList(context) {
           // e.stopPropagation();
           // console.log(e.target.parentNode.children[0].textContent);
           // console.log(e.target);
+          context.slug = Slug;
           context.destination = e.target.parentNode.children[0].textContent;
+          updateGraph(context);
           // context.init();
           changeTableOnCountry(context, e);
         })
