@@ -30,6 +30,7 @@ export default function getTableList(context) {
   container.appendChild(rowTitle);
 
   try {
+    throw Error();
     summaryByCountry().then((info) => {
       // console.log(info);
       const { Countries } = info;

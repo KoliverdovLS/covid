@@ -64,6 +64,7 @@ export default function table(context) {
   row.appendChild(columnDeath);
   row.appendChild(columnRecov);
   try {
+    throw Error();
     summaryByCountry().then((data) => {
       const { Message, Date, Countries, Global: { TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } } = data;
       columnDestLow.textContent = Date.toLocaleString();
