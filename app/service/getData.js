@@ -278,6 +278,24 @@ async function getByCountryTotalAllStatus(slug) {
   return list;
 }
 
+async function getWorldStatistics() {
+  let list = {};
+  const url = `https://api.covid19api.com/world`;
+  const getInfoByCountryTotalAllStatus = async () => {
+    try {
+      const response = await axios({
+        method: 'get',
+        url: `${url}`,
+      });
+      list = (response.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  await getInfoByCountryTotalAllStatus();
+  return list;
+}
+
 async function getGMap() {
   // let key = 'AIzaSyCGBLwir5nz5K2UTtZc5c-7NCN2NzVuNoA';
   // const url = `https://maps.googleapis.com/maps/api/js`;
@@ -317,4 +335,5 @@ export {
   getDayOneAllStatus,
   getDayOneAnyStatusLive,
   getOneTotal,
+  getWorldStatistics,
 };

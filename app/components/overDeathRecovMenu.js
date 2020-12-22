@@ -1,4 +1,5 @@
 import '../styles/overDeathRecovMenu.css';
+import updateGraph from '../service/updateGraphics';
 
 export default function overDeathRecovMenu(context) {
   const container = document.createElement('div');
@@ -43,6 +44,7 @@ export default function overDeathRecovMenu(context) {
     const all = context.dataToShow === 'overall' ? '<span><b>Overall</b></span>' : '<span>Overall</span>';
     const deaths = context.dataToShow === 'deaths' ? '<span><b>Deaths</b></span>' : '<span>Deaths</span>';
     const recov = context.dataToShow === 'recov' ? '<span><b>Recoveries</b></span>' : '<span>Recoveries</span>';
+    updateGraph(context);
 
     columnFirst.innerHTML = `${all}`;
     columnSecond.innerHTML = `${deaths}`;

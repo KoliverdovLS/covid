@@ -1,5 +1,6 @@
 import '../styles/menu.css';
 import { changeTableOnCountry } from '../service/changeTable';
+import updateGraph from '../service/updateGraphics';
 
 export default function showPopUpMenu(context) {
   const container = document.createElement('div');
@@ -37,6 +38,7 @@ export default function showPopUpMenu(context) {
     columnSecond.innerHTML = `${newAll} | ${newDay}`;
     columnThird.innerHTML = `${newTotal} | ${newPer100}`;
     changeTableOnCountry(context, e);
+    updateGraph(context);
 
     const dom = context.getTableForList(context);
     const listRow = document.querySelector('.list-row');
