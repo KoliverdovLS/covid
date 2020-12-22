@@ -1,0 +1,25 @@
+.table-container {
+  position: relative;
+}
+.wrap-col {
+  /* display: flex; */
+  /* justify-content: space-between;
+  flex-wrap: nowrap; */
+}
+
+@media (max-width: 992px) {
+  .wrap-col {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 720px) {
+  .wrap-col {
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: nowrap; */
+    padding: 0;
+  }
+}

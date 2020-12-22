@@ -1,0 +1,10 @@
+.gmap {
+  font-size: 12px;
+  height: 55vh;
+  min-height:55vh;
+  max-height: 55vh;
+}
+
+.map-container {
+  position: relative;
+}

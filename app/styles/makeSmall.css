@@ -1,0 +1,20 @@
+.make-small {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  /* background-color: rgba(178, 34, 34, 0.481); */
+  border-radius: 50%;
+  /* border: 1px solid firebrick; */
+  top: -90px;
+  right: 10px;
+  margin: 0;
+  padding: 9px;
+  text-align: center;
+  font-size: 26px;
+  line-height: 26px;
+  box-sizing: border-box;
+}
+
+.rowlowlist, .rowlowmap, .rowlowgraph {
+  position: relative;
+}
