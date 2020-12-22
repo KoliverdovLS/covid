@@ -71,6 +71,9 @@ export default function table(context) {
       columnDeathLow.textContent = TotalDeaths;
       columnRecovLow.textContent = TotalRecovered;
       console.log(Message);
+      if (Message === 'Caching in progress') {
+        throw new Error('Caching in progress');
+      }
     })
   } catch (error) {
     columnCasesLow.classList.add('pos-relative');
