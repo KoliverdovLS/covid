@@ -34,6 +34,9 @@ export default function showPopUpMenu(context) {
   container.appendChild(columnThird);
 
   container.addEventListener('click', (e) => {
+    if (e.target.parentNode.parentNode.className.includes('table-container')) {
+      return;
+    };
     const value = e.target.textContent;
     if (e.target.children[0] && e.target.children[0].textContent.toLowerCase() === 'enlarge') {
       const classname = e.target.parentNode.parentNode.className;
