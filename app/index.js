@@ -14,11 +14,11 @@ const rowtop = document.createElement('div');
 rowtop.className = ('row p-0 m-0 d-flex justify-content-end');
 
 const rowadaptivemenu = document.createElement('div'); // adptive menu
-rowadaptivemenu.className = ('row row-adaptive-menu justify-content-around bg-light');
+rowadaptivemenu.className = ('row row-adaptive-menu justify-content-around border m-0 mb-2 bg-light');
 rowadaptivemenu.appendChild(dashBoard.getAdaptiveMenuLastDayTotal());
 
 const rowadaptivemenuSecond = document.createElement('div'); // adptive menu
-rowadaptivemenuSecond.className = ('row row-adaptive-menu-second justify-content-around bg-light');
+rowadaptivemenuSecond.className = ('row row-adaptive-menu-second justify-content-around m-0 mb-2 border bg-light');
 rowadaptivemenuSecond.appendChild(dashBoard.getOverDeathRecovMenuAdaptive());
 
 const rowlow = document.createElement('div');

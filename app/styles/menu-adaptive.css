@@ -2,8 +2,8 @@
   position:absolute;
   display: none;
   height: 30px;
-  background-color: rgba(178, 34, 34, 0.481);
-  border: 1px solid firebrick;
+  /* background-color: rgba(178, 34, 34, 0.481);
+  border: 1px solid firebrick; */
   /* display: flex; */
   top: 0;
   left: 0;
