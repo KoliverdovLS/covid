@@ -1,7 +1,9 @@
-import { Loader } from "@googlemaps/js-api-loader";
-
 export default function map(context) {
   const container = document.createElement('div');
+  const row = document.createElement('div');
+  container.className = ('map-container container-fluid px-4');
+  row.className = ('row justify-content-center align-items-center gx-5');
+  container.appendChild(row);
   container.id = 'mapId';
 
   container.addEventListener('mouseenter', (e) => {

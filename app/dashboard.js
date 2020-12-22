@@ -24,6 +24,7 @@ import search from './components/search';
 import filterCountries from './service/filterContries';
 import getCorrectDataType from './service/getCorrectDataType';
 import getMap from './service/getMap';
+import getMarkerForMap from './components/getMarkerForMap';
 import createGraph from './service/createGraph';
 import showPopUpMenu from './components/menu';
 import changeFilterOption from './service/changeFilterOption';
@@ -36,7 +37,8 @@ const dashBoard = {
   worldPopulation: 7809320722,
   table: 'table', // - is not important
   list: 'list', // - is not important
-  map: 'map', // - is not important
+  map: 'map',
+  arrayMarker: [],
   graph: 'graph', // - is not important
   destination: false, // - what place to show according to the exact choice in the list
   search: '', // the input value in search field in real time
@@ -114,7 +116,11 @@ const dashBoard = {
 
   getGraph() {
     return graph(this);
-  }
+  },
+
+  getMarkers() {
+    return getMarkerForMap(this);
+  },
 
 }
 

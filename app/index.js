@@ -50,6 +50,7 @@ container.appendChild(rowlow);
 
 document.body.appendChild(container);
 dashBoard.getTheMap();
+dashBoard.getMarkers();
 
 // console.log(window.outerHeight);
 // console.log(window.screen.availHeight);
