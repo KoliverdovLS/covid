@@ -23,3 +23,7 @@
 
 
 /* getAdaptiveMenuLastDayTotal */
+
+.row-adaptive-menu-second, .row-adaptive-menu {
+  display: none;
+}
