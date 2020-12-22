@@ -80,6 +80,5 @@ export default function getTableList(context) {
     container.classList.add('pos-relative');
     container.appendChild(context.getOnLoadingScreen());
   }
-
   return container;
 }
