@@ -60,6 +60,7 @@ function createOneMarker(map, cord, size, country, color, text, arrMarker, index
 }
 
 export default function createMarkers(context) {
+  clearMarker(context);
   const arrayMarker = context.arrayMarker;
   let arrCountryWithCoords = [];
   let arrCountryNoCords = [];

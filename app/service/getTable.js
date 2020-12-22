@@ -30,19 +30,8 @@ export default function getTableList(context) {
   container.appendChild(rowTitle);
 
   summaryByCountry().then((info) => {
+    // console.log(info);
     const { Countries } = info;
-    try {
-      context.getFilteredArrayOfCountries()(Countries).map((i) => {
-        const { Country, CountryCode, Premium: { CountryStats: { Population } }, TotalConfirmed, TotalDeaths, TotalRecovered, NewConfirmed, NewDeaths, NewRecovered } = i;
-        // console.log(i);
-        const row = document.createElement('div');
-        row.className = ('row justify-content-center p-0 align-items-center');
-        const columnName = document.createElement('div');
-        const columnFlag = document.createElement('div');
-        const columnCases = document.createElement('div');
-        columnName.className = ('col-6 m-0 fs-6');
-        columnFlag.className = ('col-2 m-0 p-3');
-        columnCases.className = ('col-4 m-0 p-0 ps-1 fs-6');
     if (!Countries) {
       container.classList.add('pos-relative');
       container.appendChild(context.getOnLoadingScreen());
@@ -59,7 +48,6 @@ export default function getTableList(context) {
       columnName.className = ('col-6 m-0 fs-6');
       columnFlag.className = ('col-2 m-0 p-3');
       columnCases.className = ('col-4 m-0 p-0 ps-1 fs-6');
->>>>>>> covid-dev
 
       columnName.textContent = Country;
       columnFlag.style.backgroundImage = `url(https://www.countryflags.io/${CountryCode}/flat/32.png)`;
