@@ -79,10 +79,14 @@ export default function updateGraph(context) {
     }
     setTimeout(() => {
       let elem = document.getElementsByClassName("graph-cont")[0];
+      console.log('ДО', Graph.chart);
       if (Graph.chart.length !== 0) {
-        Graph.chart[0].destroy();
+        Graph.chart.map((chrt) => {
+            chrt.destroy();
+        });
         Graph.chart.length = 0;
-      }
+    }
+    console.log('ПОСЛЕ', Graph.chart);
       elem.style.height = '320px';
 
       if (dataToShow === 'overall') {
@@ -96,7 +100,7 @@ export default function updateGraph(context) {
             Graph.chart.push(new Chart(elem, Graph.setOptionsForgraphics(context, days, dailyCases)));
           } else Graph.chart.push(new Chart(elem, Graph.setOptionsForgraphics(context, days, convertToPer100Format(context, dailyCases))));
         }
-      }
+      } else
       if (dataToShow === 'deaths') {
         if (optAllLastDay === 'all') {
           if (optTotalPer100 === 'total') {
@@ -108,7 +112,7 @@ export default function updateGraph(context) {
             Graph.chart.push(new Chart(elem, Graph.setOptionsForgraphics(context, days, dailyDeaths)));
           } else Graph.chart.push(new Chart(elem, Graph.setOptionsForgraphics(context, days, convertToPer100Format(context, dailyDeaths))));
         }
-      }
+      } else
       if (dataToShow === 'recov') {
         if (optAllLastDay === 'all') {
           if (optTotalPer100 === 'total') {

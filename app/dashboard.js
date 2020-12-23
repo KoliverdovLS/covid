@@ -24,8 +24,8 @@ import search from './components/search';
 import filterCountries from './service/filterContries';
 import getCorrectDataType from './service/getCorrectDataType';
 import getMap from './service/getMap';
+import updateGraph from './service/updateGraphics';
 import { createMarkers } from './components/getMarkerForMap';
-import createGraph from './service/createGraph';
 import showPopUpMenu from './components/menu';
 import changeFilterOption from './service/changeFilterOption';
 import keyboard from './components/keyboard';
@@ -113,7 +113,7 @@ const dashBoard = {
   },
 
   addGraphToDom() {
-    return createGraph(this);
+    return updateGraph(this);
   },
 
   getCorrectTypeOfData() {
