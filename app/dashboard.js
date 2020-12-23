@@ -38,6 +38,7 @@ import overDeathRecovMenuAdaptive from './components/overDeathRecovMenuAdaptive'
 import { enlarge, doSmall } from './service/enlarge';
 import makeSmallBtn from './components/makeSmallBtn';
 import onLoading from './components/onLoading';
+import footerRS from './components/footer';
 
 const dashBoard = {
   worldPopulation: 7809320722,
@@ -56,6 +57,11 @@ const dashBoard = {
 
   getOnLoadingScreen() {
     return onLoading(this);
+  },
+
+  getFooter() {
+    console.log('footer');
+    return footerRS(this);
   },
 
   getAdaptiveMenuLastDayTotal() {

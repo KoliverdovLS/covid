@@ -41,6 +41,7 @@ columnForTable.className = ('p-2 col-12 h3 bg-light border');
 
 columnForTitle.appendChild(dashBoard.getTitle());
 columnForGraph.appendChild(dashBoard.getGraph());
+columnForGraph.appendChild(dashBoard.getFooter());
 columnForList.appendChild(dashBoard.getList());
 columnForMap.appendChild(dashBoard.getMapContainer());
 columnForTable.appendChild(dashBoard.getTable());
