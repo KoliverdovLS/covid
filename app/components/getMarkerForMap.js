@@ -59,6 +59,11 @@ function createOneMarker(map, cord, size, country, color, text, arrMarker, index
   arrMarker[index] = circle;
 }
 
+export function reRender() {
+  const event = new Event('resize');
+  window.dispatchEvent(event);
+}
+
 export function viewCountry(context, slug) {
   const map = context.map;
   let arrCountryWithCoords = [];
@@ -118,7 +123,6 @@ export function createMarkers(context) {
   }
   summaryByCountry().then((data) => {
     const arrCountry = data['Countries'];
-    console.log(arrayMarker);
     arrCountry.forEach((countyObj, index) => {
       const countyName = countyObj['Country'];
       const countrySlug = countyObj['Slug'];
