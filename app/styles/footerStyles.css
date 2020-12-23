@@ -1,14 +1,11 @@
-/* .footer-container {
-  min-height: 100px;
-  height: 100px;
-  max-height: 100px;
-} */
+.footer-container {
+  margin-bottom: 5px;
+}
 .column-footer, .column-footer-first {
-  font-size: 12px;
-  line-height: 13px;
+  font-size: 10px;
+  line-height: 12px;
   box-sizing: border-box;
-  height: 14px;
-
+  height: 12px;
 }
 
 .column-footer-first {
