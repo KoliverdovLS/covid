@@ -13,6 +13,19 @@
   text-align: center;
 }
 
+.first-column {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  min-height: 20px;
+  max-height: 20px;
+}
+
+.first-column-icon > span {
+  font-size: 0;
+}
+
 @media (max-width: 992px) {
   .menu-container {
     display: none;

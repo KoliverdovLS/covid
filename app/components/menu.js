@@ -1,6 +1,8 @@
 import '../styles/menu.css';
 import { changeTableOnCountry } from '../service/changeTable';
 import updateGraph from '../service/updateGraphics';
+import { createMarkers } from '../components/getMarkerForMap';
+import expand from '../assets/expand.svg';
 
 export default function showPopUpMenu(context) {
   const container = document.createElement('div');
@@ -10,9 +12,9 @@ export default function showPopUpMenu(context) {
   const columnSecond = document.createElement('div');
   const columnThird = document.createElement('div');
 
-  columnFirst.className = 'first-column m-0 p-0 col-2 fs-6';
+  columnFirst.className = 'first-column-icon first-column m-0 p-0 col-1';
   columnSecond.className = 'second-column m-0 p-0 col-5 fs-6';
-  columnThird.className = 'third-column m-0 p-0 col-5 fs-6';
+  columnThird.className = 'third-column m-0 p-0 col-6 fs-6';
 
   const all = context.optAllLastDay === 'all' ? '<span><b>All</b></span>' : '<span>All</span>';
   const day = context.optAllLastDay === 'all' ? '<span>Last day</span>' : '<span><b>Last day</b></span>';
@@ -23,20 +25,25 @@ export default function showPopUpMenu(context) {
   columnSecond.innerHTML = `${all} | ${day}`;
   columnThird.innerHTML = `${total} | ${per100}`;
 
+  columnFirst.style.backgroundImage = `url(${expand})`;
+  columnFirst.style.backgroundRepeat = 'no-repeat';
+  columnFirst.style.backgroundPosition = 'center';
+  columnFirst.style.backgroundSize = 'auto';
+
   container.appendChild(columnFirst);
   container.appendChild(columnSecond);
   container.appendChild(columnThird);
 
   container.addEventListener('click', (e) => {
+    if (e.target.parentNode.parentNode.className.includes('table-container')) {
+      return;
+    };
     const value = e.target.textContent;
-    if (value.toLowerCase() === 'enlarge') {
-      const classname = e.target.parentNode.parentNode.parentNode.className;
+    if (e.target.children[0] && e.target.children[0].textContent.toLowerCase() === 'enlarge') {
+      const classname = e.target.parentNode.parentNode.className;
       const target = (RegExp(`^([a-z]*)-container.*`).exec(classname)[1]);
-      // console.log(target);
       context.enlarge = target;
       context.makeEnlarge();
-      // console.log(rowcontainer);
-
       return;
     }
     context.changeFilterOptions()(value);
@@ -47,6 +54,7 @@ export default function showPopUpMenu(context) {
     const newPer100 = context.optTotalPer100 === 'total' ? '<span>per 100 k</span>' : '<span><b>per 100 k</b></span>';
     columnSecond.innerHTML = `${newAll} | ${newDay}`;
     columnThird.innerHTML = `${newTotal} | ${newPer100}`;
+    createMarkers(context);
     changeTableOnCountry(context, e);
     updateGraph(context);
 

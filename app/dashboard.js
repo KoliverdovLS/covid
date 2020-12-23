@@ -25,6 +25,7 @@ import filterCountries from './service/filterContries';
 import getCorrectDataType from './service/getCorrectDataType';
 import getMap from './service/getMap';
 import updateGraph from './service/updateGraphics';
+import { createMarkers } from './components/getMarkerForMap';
 import showPopUpMenu from './components/menu';
 import changeFilterOption from './service/changeFilterOption';
 import keyboard from './components/keyboard';
@@ -36,13 +37,16 @@ import showAdaptiveMenuLastDayTotal from './components/menuAdaptive';
 import overDeathRecovMenuAdaptive from './components/overDeathRecovMenuAdaptive';
 import { enlarge, doSmall } from './service/enlarge';
 import makeSmallBtn from './components/makeSmallBtn';
+import onLoading from './components/onLoading';
+import footerRS from './components/footer';
 
 const dashBoard = {
   worldPopulation: 7809320722,
   hundredThousand: 100000,
   table: 'table', // - is not important
   list: 'list', // - is not important
-  map: 'map', // - is not important
+  map: 'map',
+  arrayMarker: [],
   graph: 'graph', // - is not important
   destination: false, // - what place to show according to the exact choice in the list
   search: '', // the input value in search field in real time
@@ -50,6 +54,15 @@ const dashBoard = {
   optAllLastDay: 'all', // 'all', 'day' - to show all data or last day data
   optTotalPer100: 'total', // 'total', 'per' - to show total cases or pre 100 k population data
   enlarge: false, // 'map', 'list', 'graph', 'false' indicates if btn 'enlarge' clicked. If 'false' - view in standard
+
+  getOnLoadingScreen() {
+    return onLoading(this);
+  },
+
+  getFooter() {
+    console.log('footer');
+    return footerRS(this);
+  },
 
   getAdaptiveMenuLastDayTotal() {
     return showAdaptiveMenuLastDayTotal(this);
@@ -135,13 +148,17 @@ const dashBoard = {
     return getMap(this);
   },
 
-  getMap() {
+  getMapContainer() {
     return map(this);
   },
 
   getGraph() {
     return graph(this);
-  }
+  },
+
+  getMarkers() {
+    return createMarkers(this);
+  },
 
 }
 
