@@ -72,7 +72,9 @@ export default function table(context) {
       columnDeathLow.classList.add('pos-relative');
       columnRecovLow.classList.add('pos-relative');
       columnDestLow.classList.add('pos-relative');
-
+      if (!document.querySelector('.error-screen-container')) {
+        document.querySelector('.the-most-container').appendChild(context.getErrorScreen());
+      }
       columnDestLow.appendChild(context.getOnLoadingScreen());
       columnCasesLow.appendChild(context.getOnLoadingScreen());
       columnDeathLow.appendChild(context.getOnLoadingScreen());
