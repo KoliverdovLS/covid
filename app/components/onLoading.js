@@ -2,7 +2,7 @@ import '../styles/onLoading.css';
 
 export default function onLoading(context) {
   const container = document.createElement('div');
-  container.className = ('onLoad-cont d-flex justify-content-center');
+  container.className = ('onLoad-cont d-flex text-dark justify-content-center');
 
   const row = document.createElement('div');
   row.className = ('spinner-border');
