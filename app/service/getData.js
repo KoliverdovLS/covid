@@ -319,8 +319,27 @@ async function getGMap() {
   return map;
 }
 
+async function getDataForMap() {
+  let list = {};
+  const url = `https://corona.lmao.ninja/v2/countries`;
+  const getDataMap = async () => {
+    try {
+      const response = await axios({
+        method: 'get',
+        url: `${url}`,
+      });
+      list = (response.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  await getDataMap();
+  return list;
+}
+
 
 export {
+  getDataForMap,
   getGMap,
   getByCountryTotalAllStatus,
   getByCountryTotal,
