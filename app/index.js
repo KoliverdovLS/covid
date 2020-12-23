@@ -8,7 +8,7 @@ const container = document.createElement('div');
 container.className = ('container-fluid p-1 height bg-white align-items-stretch the-most-container');
 
 const rowtitle = document.createElement('div');
-rowtitle.className = ('row p-0 m-0 mb-2 d-flex border justify-content-between align-items-center bg-light');
+rowtitle.className = ('row p-0 m-0 mb-2 d-flex justify-content-between align-items-center bg-light');
 
 const rowtop = document.createElement('div');
 rowtop.className = ('row p-0 m-0 d-flex justify-content-end');
@@ -42,7 +42,7 @@ columnForTable.className = ('p-2 col-12 h3 bg-light border');
 columnForTitle.appendChild(dashBoard.getTitle());
 columnForGraph.appendChild(dashBoard.getGraph());
 columnForList.appendChild(dashBoard.getList());
-columnForMap.appendChild(dashBoard.getMap());
+columnForMap.appendChild(dashBoard.getMapContainer());
 columnForTable.appendChild(dashBoard.getTable());
 dashBoard.addGraphToDom();
 rowtitle.appendChild(columnForTitle);
@@ -58,4 +58,8 @@ container.appendChild(rowadaptivemenuSecond);
 container.appendChild(rowlow);
 
 
+
 document.body.appendChild(container);
+dashBoard.getTheMap();
+dashBoard.getMarkers();
+
