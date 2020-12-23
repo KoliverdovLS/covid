@@ -56,6 +56,7 @@ export function doSmall(context) {
   columnForList.className = ('rowlowlist p-0 m-0 col-sm-12 col-lg-3 h3');
 
   columnForGraph.appendChild(context.getGraph());
+  columnForGraph.appendChild(context.getFooter());
   columnForList.appendChild(context.getList());
   columnForMap.appendChild(context.getMapContainer());
 
