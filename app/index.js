@@ -28,13 +28,13 @@ const columnForTitle = document.createElement('div');
 columnForTitle.className = ('p-0 m-0 col-12 h3 d-flex border justify-content-between align-items-center');
 
 const columnForGraph = document.createElement('div');
-columnForGraph.className = ('rowlowgraph p-0 col-sm-12 col-lg-4  ');
+columnForGraph.className = ('rowlowgraph p-0 col-sm-12 col-lg-4');
 
 const columnForMap = document.createElement('div');
-columnForMap.className = ('rowlowmap p-0 col-sm-12 col-lg-5  ');
+columnForMap.className = ('rowlowmap p-0 col-sm-12 col-lg-5');
 
 const columnForList = document.createElement('div');
-columnForList.className = ('rowlowlist p-0 m-0 col-sm-12 col-lg-3 h3  ');
+columnForList.className = ('rowlowlist p-0 m-0 col-sm-12 col-lg-3 h3');
 
 const columnForTable = document.createElement('div');
 columnForTable.className = ('p-2 col-12 h3 bg-light border');
