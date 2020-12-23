@@ -75,6 +75,13 @@
   border: 1px solid rgb(178, 34, 113);
 }
 
+.rowlowgraph {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
 
 .keyboard-container {
   position: absolute;
