@@ -36,6 +36,9 @@ export default function getTableList(context) {
     if (!Countries) {
       container.classList.add('pos-relative');
       container.appendChild(context.getOnLoadingScreen());
+      if (!document.querySelector('.error-screen-container')) {
+        document.querySelector('.the-most-container').appendChild(context.getErrorScreen());
+      }
       return;
     }
     context.getFilteredArrayOfCountries()(Countries).map((i) => {

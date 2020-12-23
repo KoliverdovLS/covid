@@ -1,0 +1,19 @@
+.error-screen-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(230, 230, 247, 0.707);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-screen-text {
+  color: black;
+  font-size: 20px;
+  line-height: 25px;
+  margin: 0 auto;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+}

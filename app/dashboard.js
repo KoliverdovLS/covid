@@ -39,6 +39,7 @@ import { enlarge, doSmall } from './service/enlarge';
 import makeSmallBtn from './components/makeSmallBtn';
 import onLoading from './components/onLoading';
 import footerRS from './components/footer';
+import errorScreen from './components/error-screen';
 
 const dashBoard = {
   worldPopulation: 7809320722,
@@ -57,6 +58,10 @@ const dashBoard = {
 
   getOnLoadingScreen() {
     return onLoading(this);
+  },
+
+  getErrorScreen() {
+    return errorScreen(this);
   },
 
   getFooter() {
