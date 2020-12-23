@@ -6,10 +6,11 @@ export default function map(context) {
   container.className = ('map-container container-fluid');
   row.className = ('row justify-content-center align-items-center gx-5');
   column.className = ('gmap col h3 bg-success border');
+  mapContainer.id = 'mapId';
+  container.id = 'contID';
   container.appendChild(mapContainer);
   container.appendChild(row);
   row.appendChild(column);
-  mapContainer.id = 'mapId';
 
 
   container.addEventListener('mouseenter', (e) => {
