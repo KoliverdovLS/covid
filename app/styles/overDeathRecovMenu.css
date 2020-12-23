@@ -11,6 +11,7 @@
   right: -15px;
   border-radius: 0 0 15px 15px;
   z-index: 2000;
+  cursor: pointer;
 }
 
 .map-menu-recov-container {
@@ -26,6 +27,7 @@
   right: -15px;
   border-radius: 0 0 15px 15px;
   z-index: 2000;
+  cursor: pointer;
 }
 
 .graph-menu-recov-container {
@@ -41,6 +43,7 @@
   left: -15px;
   border-radius: 0 0 15px 15px;
   z-index: 2000;
+  cursor: pointer;
 }
 
 .first-column, .second-column, .third-column {

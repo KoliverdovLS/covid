@@ -14,7 +14,7 @@ export default function footerRS(context) {
 
   container.className = ('footer-container container-fluid');
 
-  columnFirst.className = ('column-footer col-12 p-1 m-0 text-dark');
+  columnFirst.className = ('column-footer-first col-12 p-1 m-0 text-dark');
   columnFirstOnceMore.className = ('column-footer col-12 p-1 m-0 text-dark');
   columnSecond.className = ('column-footer col-12 p-1 m-0 text-dark');
   columnThird.className = ('column-footer col-12 p-1 m-0 text-dark');
@@ -28,7 +28,7 @@ export default function footerRS(context) {
   columnThird.textContent = 'Group:';
   columnForth.innerHTML = '<span>Maksim Samorukov&nbsp&nbsp</span><a href="https://github.com/MaximSamorukov">Github</a>';
   columnFifth.innerHTML = '<span>Leonid Koliverdov&nbsp&nbsp</span><a href="https://github.com/KoliverdovLS">Github</a>';
-  columnSixth.innerHTML = '<span>Daria Suhova&nbsp&nbsp</span><a href="https://github.com/Daria-a-s">Github</a>';
+  columnSixth.innerHTML = '<span>Daria Sukhova&nbsp&nbsp</span><a href="https://github.com/Daria-a-s">Github</a>';
 
 
   container.appendChild(columnFirst);

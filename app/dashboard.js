@@ -24,8 +24,8 @@ import search from './components/search';
 import filterCountries from './service/filterContries';
 import getCorrectDataType from './service/getCorrectDataType';
 import getMap from './service/getMap';
+import updateGraph from './service/updateGraphics';
 import { createMarkers } from './components/getMarkerForMap';
-import createGraph from './service/createGraph';
 import showPopUpMenu from './components/menu';
 import changeFilterOption from './service/changeFilterOption';
 import keyboard from './components/keyboard';
@@ -39,6 +39,7 @@ import { enlarge, doSmall } from './service/enlarge';
 import makeSmallBtn from './components/makeSmallBtn';
 import onLoading from './components/onLoading';
 import footerRS from './components/footer';
+import errorScreen from './components/error-screen';
 
 const dashBoard = {
   worldPopulation: 7809320722,
@@ -57,6 +58,10 @@ const dashBoard = {
 
   getOnLoadingScreen() {
     return onLoading(this);
+  },
+
+  getErrorScreen() {
+    return errorScreen(this);
   },
 
   getFooter() {
@@ -113,7 +118,7 @@ const dashBoard = {
   },
 
   addGraphToDom() {
-    return createGraph(this);
+    return updateGraph(this);
   },
 
   getCorrectTypeOfData() {

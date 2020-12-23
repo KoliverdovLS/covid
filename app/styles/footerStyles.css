@@ -1,5 +1,17 @@
-.column-footer {
-  font-size: 12px;
-  line-height: 13px;
+.footer-container {
+  margin-bottom: 7px;
+}
+.column-footer, .column-footer-first {
+  font-size: 10px;
+  line-height: 12px;
   box-sizing: border-box;
+  height: 12px;
+}
+
+.column-footer-first {
+  height: auto;
+}
+
+.column-footer>a, .column-footer-first>a {
+  text-decoration: none;
 }

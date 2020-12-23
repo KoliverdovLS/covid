@@ -1,5 +1,3 @@
-import Chart from 'chart.js';
-import { getWorldStatistics, getByCountryTotalAllStatus } from './getData';
 import 'chartjs-plugin-zoom/dist/chartjs-plugin-zoom';
 import 'moment/dist/moment';
 
@@ -15,7 +13,8 @@ export function setOptionsForgraphics(context, days, data) {
             data: data,
             backgroundColor: 'rgba(255, 99, 132, 0.8)',
             borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 1
+            fontColor: 'rgba(255, 255, 255, 1)',
+            borderWidth: 1,
         }]
     },
     options: {
@@ -23,6 +22,7 @@ export function setOptionsForgraphics(context, days, data) {
       title: {
         display: true,
         text: context.dataToShow || 'Confirmed Cases',
+        fontColor: 'rgba(255,255,255,1)',
       },
       scales: {
         x: {
@@ -71,27 +71,3 @@ export function setOptionsForgraphics(context, days, data) {
 }
 
 export const chart = [];
-export default function createGraph(context) {
-  const totalCases = [];
-  const days = [];
-
-    getWorldStatistics().then((i) => {
-      const data = i;
-      data.sort((a,b) => a.TotalConfirmed - b.TotalConfirmed);
-      data.map((day) => {
-        totalCases.push(day.TotalConfirmed);
-      });
-      let today = new Date();
-      for(let dt=0; dt<totalCases.length; dt++){
-        days.push(today.toLocaleDateString());
-        today.setDate(today.getDate() - 1)
-      }
-    days.reverse();
-  });
-
-  setTimeout(() => {
-    let elem = document.getElementsByClassName("graph-cont")[0];
-    chart.push(new Chart(elem, setOptionsForgraphics(context, days, totalCases)));
-    chart[0].update();
-  }, 2000);
-};
