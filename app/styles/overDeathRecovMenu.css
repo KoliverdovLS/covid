@@ -51,6 +51,18 @@
   transform: rotate(180deg);
 }
 
+.move-class {
+  right: 15px;
+  border-radius: 15px 15px 0 0;
+  display: none;
+}
+
+.left-move-class {
+  left: 15px;
+  border-radius: 15px 15px 0 0;
+  display: none;
+}
+
 @media (max-width: 992px) {
   .graph-menu-recov-container, .map-menu-recov-container, .menu-recov-container {
     display: none;

@@ -10,6 +10,9 @@ export function enlarge(context) {
     rowgraphcontainer.classList.add('col-sm-12');
     rowgraphcontainer.classList.remove('col-lg-4');
     rowgraphcontainer.appendChild(context.makeSmallButton());
+    document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+    document.querySelectorAll('.graph-menu-recov-container').forEach((i) => i.remove());
+
   };
 
   if (!enlarge || enlarge === 'list') {
@@ -17,6 +20,10 @@ export function enlarge(context) {
     rowlistcontainer.classList.add('col-sm-12');
     rowlistcontainer.classList.remove('col-lg-3');
     rowlistcontainer.appendChild(context.makeSmallButton());
+    document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+    document.querySelectorAll('.keyboard-menu-container').forEach((i) => i.remove());
+    document.querySelectorAll('.menu-recov-container').forEach((i) => i.remove());
+    document.querySelectorAll('.keyboard-container').forEach((i) => i.remove());
   };
 
   if (!enlarge || enlarge === 'map') {
@@ -24,6 +31,9 @@ export function enlarge(context) {
     rowmapcontainer.classList.add('col-sm-12');
     rowmapcontainer.classList.remove('col-lg-5');
     rowmapcontainer.appendChild(context.makeSmallButton());
+    document.querySelectorAll('.menu-container').forEach((i) => i.remove());
+    document.querySelectorAll('.map-menu-recov-container').forEach((i) => i.remove());
+
   };
 }
 
