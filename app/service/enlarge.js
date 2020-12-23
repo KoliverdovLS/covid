@@ -1,3 +1,5 @@
+import { reRender } from '../components/getMarkerForMap';
+
 export function enlarge(context) {
   const { enlarge } = context;
   const rowcontainer = document.querySelector('.rowlow');
@@ -31,6 +33,7 @@ export function enlarge(context) {
     rowmapcontainer.classList.add('col-sm-12');
     rowmapcontainer.classList.remove('col-lg-5');
     rowmapcontainer.appendChild(context.makeSmallButton());
+    setTimeout(reRender(context), 100);
     document.querySelectorAll('.menu-container').forEach((i) => i.remove());
     document.querySelectorAll('.map-menu-recov-container').forEach((i) => i.remove());
 
