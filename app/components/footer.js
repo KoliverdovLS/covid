@@ -28,7 +28,7 @@ export default function footerRS(context) {
   columnThird.textContent = 'Group:';
   columnForth.innerHTML = '<span>Maksim Samorukov&nbsp&nbsp</span><a href="https://github.com/MaximSamorukov">Github</a>';
   columnFifth.innerHTML = '<span>Leonid Koliverdov&nbsp&nbsp</span><a href="https://github.com/KoliverdovLS">Github</a>';
-  columnSixth.innerHTML = '<span>Daria Suhova&nbsp&nbsp</span><a href="https://github.com/Daria-a-s">Github</a>';
+  columnSixth.innerHTML = '<span>Daria Sukhova&nbsp&nbsp</span><a href="https://github.com/Daria-a-s">Github</a>';
 
 
   container.appendChild(columnFirst);
