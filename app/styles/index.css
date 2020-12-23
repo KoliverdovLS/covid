@@ -71,7 +71,7 @@
   width: 570px;
   top: 0;
   left: 100%;
-  z-index: 3;
+  z-index: 2001;
 }
 .row-adaptive-menu, .row-adaptive-menu-second {
   display: none;
