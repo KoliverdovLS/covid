@@ -14,6 +14,9 @@ export default function map(context) {
 
 
   container.addEventListener('mouseenter', (e) => {
+    if (context.enlarge) {
+      return;
+    }
     if (e.fromElement.tagName === 'DIV') {
       container.appendChild(context.addPopUpMenu());
       container.appendChild(context.getOverDeathRecovMenu());
