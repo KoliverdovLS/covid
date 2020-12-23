@@ -59,7 +59,24 @@ function createOneMarker(map, cord, size, country, color, text, arrMarker, index
   arrMarker[index] = circle;
 }
 
-export default function createMarkers(context) {
+export function viewCountry(context, slug) {
+  const map = context.map;
+  let arrCountryWithCoords = [];
+  let arrCountryNoCords = [];
+  const promiseCords = getDataForMap().then((arrCountry) => {
+    arrCountryWithCoords = arrCountry;
+  });
+  const promiseCountry = getCountries().then((arrCount) => {
+    arrCountryNoCords = arrCount;
+  });
+  Promise.all([promiseCountry, promiseCords]).then(() => {
+    const coords = getCordsBySlug(slug, arrCountryNoCords, arrCountryWithCoords);
+    if (coords) map.setView([coords.lat, coords.long], 5);
+  })
+
+}
+
+export function createMarkers(context) {
   clearMarker(context);
   const arrayMarker = context.arrayMarker;
   let arrCountryWithCoords = [];

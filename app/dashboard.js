@@ -24,7 +24,7 @@ import search from './components/search';
 import filterCountries from './service/filterContries';
 import getCorrectDataType from './service/getCorrectDataType';
 import getMap from './service/getMap';
-import getMarkerForMap from './components/getMarkerForMap';
+import { createMarkers } from './components/getMarkerForMap';
 import createGraph from './service/createGraph';
 import showPopUpMenu from './components/menu';
 import changeFilterOption from './service/changeFilterOption';
@@ -151,7 +151,7 @@ const dashBoard = {
   },
 
   getMarkers() {
-    return getMarkerForMap(this);
+    return createMarkers(this);
   },
 
 }

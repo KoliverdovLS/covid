@@ -1,6 +1,6 @@
 import '../styles/menu-adaptive.css'; //
 import { changeTableOnCountry } from '../service/changeTable';
-import updateMarker from '../components/getMarkerForMap';
+import { createMarkers } from '../components/getMarkerForMap';
 
 export default function showAdaptiveMenuLastDayTotal(context) {
   const container = document.createElement('div');
@@ -38,7 +38,7 @@ export default function showAdaptiveMenuLastDayTotal(context) {
     columnSecond.innerHTML = `${newAll} | ${newDay}`;
     columnThird.innerHTML = `${newTotal} | ${newPer100}`;
     changeTableOnCountry(context, e);
-    updateMarker(context);
+    createMarkers(context);
 
     const dom = context.getTableForList(context);
     const listRow = document.querySelector('.list-row');

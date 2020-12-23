@@ -2,6 +2,7 @@ import '../styles/index.css';
 import { getCountries, summaryByCountry } from './getData';
 import { changeTableOnCountry } from './changeTable';
 import updateGraph from './updateGraphics';
+import { viewCountry } from '../components/getMarkerForMap';
 
 export default function getTableList(context) {
   const { dataToShow } = context;
@@ -77,6 +78,7 @@ export default function getTableList(context) {
         updateGraph(context);
         // context.init();
         changeTableOnCountry(context, e);
+        viewCountry(context, Slug);
       })
     });
   });
