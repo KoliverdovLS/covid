@@ -1,6 +1,20 @@
-.column-footer {
+/* .footer-container {
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
+} */
+.column-footer, .column-footer-first {
   font-size: 12px;
   line-height: 13px;
   box-sizing: border-box;
   height: 14px;
+
+}
+
+.column-footer-first {
+  height: auto;
+}
+
+.column-footer>a, .column-footer-first>a {
+  text-decoration: none;
 }

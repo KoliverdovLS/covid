@@ -14,7 +14,7 @@ export default function footerRS(context) {
 
   container.className = ('footer-container container-fluid');
 
-  columnFirst.className = ('column-footer col-12 p-1 m-0 text-dark');
+  columnFirst.className = ('column-footer-first col-12 p-1 m-0 text-dark');
   columnFirstOnceMore.className = ('column-footer col-12 p-1 m-0 text-dark');
   columnSecond.className = ('column-footer col-12 p-1 m-0 text-dark');
   columnThird.className = ('column-footer col-12 p-1 m-0 text-dark');
