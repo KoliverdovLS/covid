@@ -1,9 +1,19 @@
+* {
+  font-family: 'Oswald', sans-serif;
+}
+
 .height {
   height: 100vh;
   min-height: 100vh;
   max-height: 100vh;
   /* border: 1px solid firebrick; */
   /* overflow: hidden; */
+}
+
+.title-inner-container {
+  font-size: 25px;
+  line-height: 25px;
+  box-sizing: border-box;
 }
 
 .the-most-container {
@@ -71,7 +81,7 @@
   width: 570px;
   top: 0;
   left: 100%;
-  z-index: 3;
+  z-index: 2001;
 }
 .row-adaptive-menu, .row-adaptive-menu-second {
   display: none;

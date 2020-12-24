@@ -11,6 +11,9 @@ export default function graph(context) {
   container.appendChild(row);
 
   container.addEventListener('mouseenter', (e) => {
+    if (context.enlarge) {
+      return;
+    }
     try {
       if (e.fromElement.tagName === 'DIV') {
         container.appendChild(context.addPopUpMenu());
