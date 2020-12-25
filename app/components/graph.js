@@ -15,7 +15,7 @@ export default function graph(context) {
       return;
     }
     try {
-      if (e.fromElement.tagName && e.fromElement.tagName === 'DIV') {
+      if (e.fromElement && e.fromElement.tagName === 'DIV') {
         container.appendChild(context.addPopUpMenu());
         container.appendChild(context.getOverDeathRecovMenu());
         document.querySelector('.menu-recov-container').classList.replace('menu-recov-container', 'graph-menu-recov-container');
@@ -27,7 +27,7 @@ export default function graph(context) {
 
   container.addEventListener('mouseleave', (e) => {
     try {
-      if (e.fromElement.tagName && e.target.tagName === 'DIV') {
+      if (e.fromElement && e.target.tagName === 'DIV') {
         document.querySelectorAll('.menu-container').forEach((i) => i.remove());
         document.querySelectorAll('.graph-menu-recov-container').forEach((i) => i.remove());
       };
