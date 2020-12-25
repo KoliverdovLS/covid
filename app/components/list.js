@@ -17,7 +17,7 @@ export default function list(context) {
       return;
     }
     try {
-      if (e.fromElement.tagName === 'DIV') {
+      if (e.fromElement.tagName && e.fromElement.tagName === 'DIV') {
         container.appendChild(context.addPopUpMenu());
         container.appendChild(context.getMenuToShowKeyboard());
         container.appendChild(context.getOverDeathRecovMenu());
@@ -28,7 +28,7 @@ export default function list(context) {
   });
 
   container.addEventListener('mouseleave', (e) => {
-    if (e.target.tagName === 'DIV') {
+    if (e.fromElement.tagName && e.target.tagName === 'DIV') {
       document.querySelectorAll('.menu-container').forEach((i) => i.remove());
       document.querySelectorAll('.keyboard-menu-container').forEach((i) => i.remove());
       document.querySelectorAll('.menu-recov-container').forEach((i) => i.remove());

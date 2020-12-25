@@ -95,7 +95,7 @@ export default function table(context) {
       return;
     }
     try {
-      if (e.fromElement.tagName === 'DIV') {
+      if (e.fromElement.tagName && e.fromElement.tagName === 'DIV') {
         container.appendChild(context.addPopUpMenu());
       };
     } catch (error) {
@@ -105,7 +105,7 @@ export default function table(context) {
 
   container.addEventListener('mouseleave', (e) => {
     try {
-      if (e.target.tagName === 'DIV') {
+      if (e.fromElement.tagName && e.target.tagName === 'DIV') {
         document.querySelectorAll('.menu-container').forEach((i) => i.remove());
       };
     } catch (error) {
