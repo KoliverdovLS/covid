@@ -1,4 +1,6 @@
 import { getDataForMap, getCountries, summaryByCountry } from '../service/getData';
+import updateGraph from "../service/updateGraphics";
+import {changeTableOnCountry} from "../service/changeTable";
 
 
 function getPer100(population, count) {
@@ -36,7 +38,7 @@ function getCordsBySlug(slug, arrCountry, arrCountryWithCoords) {
   return coords;
 }
 
-function createOneMarker(map, cord, size, country, color, text, arrMarker, index) {
+function createOneMarker(map, cord, size, country, color, text, arrMarker, index, slug, context) {
   const cords = [cord['lat'], cord['long']]
   const sqrtSize = Math.sqrt(size) * 100;
   const trueSize = (sqrtSize < 5000) ? 5000 : sqrtSize;
@@ -46,6 +48,7 @@ function createOneMarker(map, cord, size, country, color, text, arrMarker, index
     fillOpacity: 1,
     radius: trueSize,
   }).addTo(map);
+  circle.textSlug = slug;
   const textPopup = `${country}: ${text}`;
   const popup = circle.bindPopup(textPopup, {
     closeButton: false,
@@ -55,6 +58,12 @@ function createOneMarker(map, cord, size, country, color, text, arrMarker, index
   });
   circle.addEventListener('mouseout', () => {
     popup.closePopup();
+  });
+  circle.addEventListener('click', () => {
+    map.setView(cords, 5);
+    context.destination = country;
+    updateGraph(context);
+    changeTableOnCountry(context);
   });
   arrMarker[index] = circle;
 }
@@ -133,7 +142,7 @@ export function createMarkers(context) {
       Promise.all([promiseCountry, promiseCords]).then(() => {
         const coords = getCordsBySlug(countrySlug, arrCountryNoCords, arrCountryWithCoords);
         if (coords) {
-          createOneMarker(map, coords, count * multiplier, countyName, color, textToPopup, arrayMarker, index);
+          createOneMarker(map, coords, count * multiplier, countyName, color, textToPopup, arrayMarker, index, countrySlug, context);
         }
       })
     })
