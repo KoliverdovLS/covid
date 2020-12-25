@@ -105,6 +105,9 @@
   /* .row-adaptive-menu-second {
     border: 1px solid hotpink;
   } */
+  .rowlowgraph, .rowlowmap {
+    margin-top: 22px !important;
+  }
 
   .row-adaptive-menu, .row-adaptive-menu-second {
     display: flex;

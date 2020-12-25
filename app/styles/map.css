@@ -28,7 +28,7 @@
   border: 2px solid darkgray;
   border-radius: 5px;
 
-  z-index: 3000;
+  z-index: 1999;
 
 }
 
@@ -40,7 +40,7 @@
   align-content: center;
   width: 150px;
   height: 20px;
-  z-index: 3000;
+  z-index: 1999;
 }
 
 .legend-circle {
