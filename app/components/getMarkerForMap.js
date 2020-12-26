@@ -62,6 +62,7 @@ function createOneMarker(map, cord, size, country, color, text, arrMarker, index
   circle.addEventListener('click', () => {
     map.setView(cords, 5);
     context.destination = country;
+    context.slug = slug;
     updateGraph(context);
     changeTableOnCountry(context);
   });
