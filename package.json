@@ -34,6 +34,7 @@
     "axios": "^0.21.0",
     "bootstrap": "^5.0.0-beta1",
     "chart.js": "^2.9.4",
+    "chartist": "^0.11.4",
     "chartjs-plugin-zoom": "^0.7.7",
     "moment": "^2.29.1",
     "normalize.css": "^8.0.1",
