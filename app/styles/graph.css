@@ -6,8 +6,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  max-width: 320px;
-  max-height: 320px;
   flex-wrap: wrap;
   margin: 5px auto 0;
 }
@@ -15,9 +13,5 @@
 .btn-container button {
   margin: 5px;
   width: 150px;
-}
-
-.graph-cont {
-  min-height: 300px;
-  min-width: 466px;
+  color: rgb(196, 192, 79);
 }
