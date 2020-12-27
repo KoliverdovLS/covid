@@ -1,6 +1,6 @@
 import { getDataForMap, getCountries, summaryByCountry } from '../service/getData';
 import updateGraph from "../service/updateGraphics";
-import {changeTableOnCountry} from "../service/changeTable";
+import { changeTableOnCountry } from "../service/changeTable";
 
 
 function getPer100(population, count) {
@@ -115,7 +115,7 @@ export function createMarkers(context) {
   if (isPer100) multiplier *= 400;
   let typeText = null;
   let color = null;
-  switch (typeData){
+  switch (typeData) {
     case 'overall':
       typeText = `Confirmed`;
       color = 'orange';
@@ -133,19 +133,28 @@ export function createMarkers(context) {
   }
   summaryByCountry().then((data) => {
     const arrCountry = data['Countries'];
-    arrCountry.forEach((countyObj, index) => {
-      const countyName = countyObj['Country'];
-      const countrySlug = countyObj['Slug'];
-      const population = countyObj['Premium']['CountryStats']['Population'];
-      let count = countyObj[`${isOneDayText}${typeText}`];
-      if (isPer100) count = getPer100(population, count);
-      const textToPopup = `${isOneDayText} ${typeText} ${isPer100Text} - ${count}`;
-      Promise.all([promiseCountry, promiseCords]).then(() => {
-        const coords = getCordsBySlug(countrySlug, arrCountryNoCords, arrCountryWithCoords);
-        if (coords) {
-          createOneMarker(map, coords, count * multiplier, countyName, color, textToPopup, arrayMarker, index, countrySlug, context);
-        }
+    if (arrCountry === undefined) {
+      return;
+    }
+    try {
+      arrCountry.forEach((countyObj, index) => {
+        const countyName = countyObj['Country'];
+        const countrySlug = countyObj['Slug'];
+        const population = countyObj['Premium']['CountryStats']['Population'];
+        let count = countyObj[`${isOneDayText}${typeText}`];
+        if (isPer100) count = getPer100(population, count);
+        const textToPopup = `${isOneDayText} ${typeText} ${isPer100Text} - ${count}`;
+        Promise.all([promiseCountry, promiseCords]).then(() => {
+          const coords = getCordsBySlug(countrySlug, arrCountryNoCords, arrCountryWithCoords);
+          if (coords) {
+            createOneMarker(map, coords, count * multiplier, countyName, color, textToPopup, arrayMarker, index, countrySlug, context);
+          }
+        })
       })
-    })
+
+    }
+    catch (error) {
+      console.log(error);
+    }
   });
 }

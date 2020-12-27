@@ -21,6 +21,7 @@ async function defaultInfo() {
 
 // A summary of new and total cases per country updated daily.
 async function summaryByCountry() {
+  const s = window.localStorage;
   let list = {};
   const url = 'https://api.covid19api.com/summary';
   const getSumInfoByCountry = async () => {
@@ -32,7 +33,14 @@ async function summaryByCountry() {
         },
         url: `${url}`,
       });
-      list = (response.data);
+
+      if (response.data['Message'] === 'Caching in progress' && s.getItem('covid')) {
+        const datainCaseOfError = JSON.parse(s.getItem('covid'));
+        list = datainCaseOfError;
+      } else {
+        s.setItem('covid', JSON.stringify(response.data));
+        list = (response.data);
+      }
     } catch (e) {
       console.log(e);
     }
@@ -44,6 +52,7 @@ async function summaryByCountry() {
 // Returns all the available countries and provinces, as well as the country slug for per country requests.
 async function getCountries() {
   let list = {};
+  const s = window.localStorage;
   const url = 'https://api.covid19api.com/countries';
   const getAllCountries = async () => {
     try {
@@ -51,7 +60,13 @@ async function getCountries() {
         method: 'get',
         url: `${url}`,
       });
-      list = (response.data);
+      if (response.data['Message'] === 'Caching in progress' && s.getItem('covidCountries')) {
+        const datainCaseOfError = JSON.parse(s.getItem('covidCountries'));
+        list = datainCaseOfError;
+      } else {
+        s.setItem('covidCountries', JSON.stringify(response.data));
+        list = (response.data);
+      }
     } catch (e) {
       console.log(e);
     }
@@ -280,6 +295,7 @@ async function getByCountryTotalAllStatus(slug) {
 
 async function getWorldStatistics() {
   let list = {};
+  const s = window.localStorage;
   const url = `https://api.covid19api.com/world`;
   const getInfoByCountryTotalAllStatus = async () => {
     try {
@@ -287,7 +303,13 @@ async function getWorldStatistics() {
         method: 'get',
         url: `${url}`,
       });
-      list = (response.data);
+      if (response.data['Message'] === 'Caching in progress' && s.getItem('covidWorld')) {
+        const datainCaseOfError = JSON.parse(s.getItem('covidWorld'));
+        list = datainCaseOfError;
+      } else {
+        s.setItem('covidWorld', JSON.stringify(response.data));
+        list = (response.data);
+      }
     } catch (e) {
       console.log(e);
     }
